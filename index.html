@@ -8,6 +8,16 @@ body {
   font: normal 100%/1.5 Arial,Helvetica,sans-serif;
   margin: 0;
 }
+nav {
+  float: right;
+}
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+nav li {
+  margin-left: 0;
+}
 main {
   max-width: 40em;
   margin: 1.5em auto 3em;
@@ -33,197 +43,196 @@ tbody > tr:nth-child(2n) > td {
     </style>
   </head>
   <body>
-    <main>
-      <h1><a href="https://github.com/hyperform/hyperform"><img src="https://github.com/hyperform/hyperform/raw/master/stuff/header.png" alt="Text “Hyperform - Insert Form” in 80s arcade game style" style="max-width:100%;"></a></h1>
-      <h2>Capture form validation back from the browser</h2>
-
-      <p>Hyperform is a complete implementation of the HTML 5 form validation API
-      in Javascript. It replaces the browser’s native methods (if it even
-      implements them…) and enriches it with custom events and hooks.</p>
-
-      <p><a href="https://github.com/hyperform/hyperform">Github project page</a></p>
-
-      <h2>Installation</h2>
-
-      <p>The easiest way is installing via <code>npm</code>:</p>
-
-      <pre><code>npm install hyperform</code></pre>
-
-      <p>Or download the <a
-        href="https://github.com/hyperform/hyperform/archive/master.zip">current
-      version as ZIP archive</a>.</p>
-
-      <p>Then embed <code>dist/hyperform.min.js</code> in your file:</p>
-
-      <pre><code>&lt;script src="path/to/hyperform/dist/hyperform.min.js"&gt;&lt;/script&gt; </code></pre>
-
-      <h2>Usage</h2>
-
-      <p>The library introduces the global variable <code>hyperform</code>. You
-      can let Hyperform take over a single form:</p>
-
-      <pre><code>hyperform.capture(document.forms[0]);</code></pre>
-
-      <p>or all forms, current and future ones:</p>
-
-      <pre><code>hyperform.capture(document);</code></pre>
-
-      <p>If you need only a certain feature, you can access it directly by name:</p>
-
-      <pre><code>hyperform.setCustomValidity.call(form.elements[0], 'my message');</code></pre>
-
-      <h2>Status</h2>
-
-      <p>What parts of the <a
-        href="https://html.spec.whatwg.org/multipage/forms.html#constraints">HTML5
-      validation API</a> are ready for prime time?</p>
-
-      <table><thead>
-      <tr>
-      <th>feature</th>
-      <th>status</th>
-      <th>comment</th>
-      </tr>
-      </thead><tbody>
-      <tr>
-      <td><code>willValidate</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>setCustomValidity(message)</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>validity.valueMissing</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>validity.typeMismatch</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>validity.patternMismatch</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>validity.tooLong</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>validity.tooShort</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>validity.rangeUnderflow</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>validity.rangeOverflow</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>validity.stepMismatch</code></td>
-      <td><img class="emoji" title=":last_quarter_moon:" alt=":last_quarter_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f317.png" align="absmiddle" height="20" width="20"></td>
-      <td>Step validation for <code>type=month</code> is incorrect, yet</td>
-      </tr>
-      <tr>
-      <td><code>validity.badInput</code></td>
-      <td><img class="emoji" title=":waning_gibbous_moon:" alt=":waning_gibbous_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f316.png" align="absmiddle" height="20" width="20"></td>
-      <td>Works for all but <code>type=email</code>. (That last one might be unfixable. See comment in <a href="https://github.com/hyperform/hyperform/blob/master/src/validators/bad_input.js">src/validators/bad_input.js</a>.)</td>
-      </tr>
-      <tr>
-      <td><code>validity.customError</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>validity.valid</code></td>
-      <td><img class="emoji" title=":waning_gibbous_moon:" alt=":waning_gibbous_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f316.png" align="absmiddle" height="20" width="20"></td>
-      <td>Depends on the other validations above. Apart from that, finished.</td>
-      </tr>
-      <tr>
-      <td><code>checkValidity()</code></td>
-      <td><img class="emoji" title=":waning_gibbous_moon:" alt=":waning_gibbous_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f316.png" align="absmiddle" height="20" width="20"></td>
-      <td>Depends on <code>ValidityState</code>. Apart from that, finished.</td>
-      </tr>
-      <tr>
-      <td><code>reportValidity()</code></td>
-      <td><img class="emoji" title=":last_quarter_moon:" alt=":last_quarter_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f317.png" align="absmiddle" height="20" width="20"></td>
-      <td>Depends on <code>ValidityState</code>. Needs a bit more love for the error message renderer. Will render error, even if <code>invalid</code> event is cancelled.</td>
-      </tr>
-      <tr>
-      <td><code>validationMessage</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>valueAsDate</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>valueAsNumber</code></td>
-      <td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      <tr>
-      <td><code>valueLow</code> / <code>valueHigh</code></td>
-      <td><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"></td>
-      <td>not started, yet</td>
-      </tr>
-      <tr>
-      <td><code>stepUp(n)</code> / <code>stepDown(n)</code></td>
-      <td><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"></td>
-      <td>not started, yet</td>
-      </tr>
-      <tr>
-      <td><code>accept</code> attribute</td>
-      <td><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"></td>
-      <td>for <code>type=file</code> inputs. Is it useful to implement a check here? There are browsers without support here, that implement the File API. So we could totally do it.</td>
-      </tr>
-      <tr>
-      <td>support for <code>novalidate</code></td>
-      <td><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"></td>
-      <td></td>
-      </tr>
-      </tbody></table>
-
-      <p>What parts of the high-level API are finished?</p>
-
+    <nav>
       <ul>
-        <li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Trigger a <code>validate</code> event before validating an element.</li>
-        <li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Trigger a <code>valid</code> event, when an input becomes valid, again.</li>
-        <li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Allow functions to hook into the actual validations to accept or
-        reject inputs.</li>
-        <li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Translate validation messages.</li>
-        <li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Add a registry for custom validators for inputs, that are called
-        automatically in the <code>validity.customError</code> step.</li>
-        <li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Catch form submissions <em>before</em> the <code>submit</code> event to do our own
-        validation (<code>click</code>s on submit buttons and <code>enter</code> keys in text inputs in
-        forms w/o submit buttons).</li>
-        <li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Add helper classes <code>valid</code> and <code>invalid</code> as well as proper
-        <code>aria-invalid</code> to elements to become independent of <code>:valid</code> / <code>:invalid</code>
-        pseudo-classes.</li>
-        <li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Allow specifying settings to customize the behavior of Hyperform
-        (e. g., specifying a renderer for error messages).</li>
-        <li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Take single <code>&lt;input&gt;</code> elements out of validation (think
-        <code>novalidate</code> attribute for inputs).</li>
+        <li><a href="https://github.com/hyperform/hyperform">Github project page</a></li>
       </ul>
+    </nav>
+    <main>
+<h1><img alt="Text “Hyperform - Insert Form” in 80s arcade game style" src="stuff/header.png"></h1>
+<h2>Capture form validation back from the browser</h2>
+<p>Hyperform is a complete implementation of the HTML 5 form validation API in
+Javascript. It replaces the browser’s native methods (if it even implements
+them…) and enriches it with custom events and hooks.</p>
+<h2>Installation</h2>
+<p>The easiest way is installing via <code>npm</code>:</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%">npm install hyperform
+</pre></div>
 
-      <p>Do you have a wish or an idea? <a href="https://github.com/hyperform/hyperform/issues/new">File an issue and let us discuss it!</a></p>
 
-      <h2>License</h2>
+<p>Or download the <a href="https://github.com/hyperform/hyperform/archive/master.zip">current version as ZIP
+archive</a>.</p>
+<p>Then embed <code>dist/hyperform.min.js</code> in your file:</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #008000; font-weight: bold">&lt;script</span> <span style="color: #7D9029">src=</span><span style="color: #BA2121">&quot;path/to/hyperform/dist/hyperform.min.js&quot;</span><span style="color: #008000; font-weight: bold">&gt;&lt;/script&gt;</span>
+</pre></div>
 
-      <p>This library is released under the terms of the <a href="https://github.com/hyperform/hyperform/blob/master/LICENSE.md">MIT license</a>.</p>
+
+<h2>Usage</h2>
+<p>The library introduces the global variable <code>hyperform</code>. You can let Hyperform
+take over a single form:</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%">hyperform.capture(document.forms[0]);
+</pre></div>
+
+
+<p>or all forms, current and future ones:</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%">hyperform.capture(document);
+</pre></div>
+
+
+<p>If you need only a certain feature, you can access it directly by name:</p>
+<div class="codehilite" style="background: #f8f8f8"><pre style="line-height: 125%">hyperform.setCustomValidity.call(form.elements[0], &#39;my message&#39;);
+</pre></div>
+
+
+<h2>Status</h2>
+<p>What parts of the <a href="https://html.spec.whatwg.org/multipage/forms.html#constraints">HTML5 validation
+API</a> are ready
+for prime time?</p>
+<table>
+<thead>
+<tr>
+<th>feature</th>
+<th>status</th>
+<th>comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>willValidate</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>setCustomValidity(message)</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>validity.valueMissing</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>validity.typeMismatch</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>validity.patternMismatch</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>validity.tooLong</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>validity.tooShort</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>validity.rangeUnderflow</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>validity.rangeOverflow</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>validity.stepMismatch</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>validity.badInput</code></td>
+<td><img class="emoji" title=":waning_gibbous_moon:" alt=":waning_gibbous_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f316.png" align="absmiddle" height="20" width="20"></td>
+<td>Works for all but <code>type=email</code>. (That last one might be unfixable. See comment in <a href="src/validators/bad_input.js">src/validators/bad_input.js</a>.)</td>
+</tr>
+<tr>
+<td><code>validity.customError</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>validity.valid</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td>with restriction from <code>validity.badInput</code> above</td>
+</tr>
+<tr>
+<td><code>checkValidity()</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td>with restriction from <code>validity.badInput</code> above</td>
+</tr>
+<tr>
+<td><code>reportValidity()</code></td>
+<td><img class="emoji" title=":waning_gibbous_moon:" alt=":waning_gibbous_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f316.png" align="absmiddle" height="20" width="20"></td>
+<td>with restriction from <code>validity.badInput</code> above. Needs a bit more love for the error message renderer.</td>
+</tr>
+<tr>
+<td><code>validationMessage</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>valueAsDate</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>valueAsNumber</code></td>
+<td><img class="emoji" title=":full_moon:" alt=":full_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f315.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+<tr>
+<td><code>valueLow</code> / <code>valueHigh</code></td>
+<td><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"></td>
+<td>not started, yet</td>
+</tr>
+<tr>
+<td><code>stepUp(n)</code> / <code>stepDown(n)</code></td>
+<td><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"></td>
+<td>not started, yet</td>
+</tr>
+<tr>
+<td><code>accept</code> attribute</td>
+<td><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"></td>
+<td>for <code>type=file</code> inputs. Is it useful to implement a check here? There are browsers without support here, that implement the File API. So we could totally do it.</td>
+</tr>
+<tr>
+<td>support for <code>novalidate</code></td>
+<td><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>What parts of the high-level API are finished?</p>
+<ul>
+<li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Trigger a <code>validate</code> event before validating an element.</li>
+<li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Trigger a <code>valid</code> event, when an input becomes valid, again.</li>
+<li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Allow functions to hook into the actual validations to accept or
+    reject inputs.</li>
+<li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Translate validation messages.</li>
+<li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Add a registry for custom validators for inputs, that are called
+    automatically in the <code>validity.customError</code> step.</li>
+<li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Catch form submissions <em>before</em> the <code>submit</code> event to do our own
+    validation (<code>click</code>s on submit buttons and <code>enter</code> keys in text inputs in
+    forms w/o submit buttons).</li>
+<li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Add helper classes <code>valid</code> and <code>invalid</code> as well as proper
+    <code>aria-invalid</code> to elements to become independent of <code>:valid</code> / <code>:invalid</code>
+    pseudo-classes.</li>
+<li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Allow specifying settings to customize the behavior of Hyperform
+    (e. g., specifying a renderer for error messages).</li>
+<li><img class="emoji" title=":new_moon:" alt=":new_moon:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f311.png" align="absmiddle" height="20" width="20"> Take single <code>&lt;input&gt;</code> elements out of validation (think
+    <code>novalidate</code> attribute for inputs).</li>
+</ul>
+<p>Do you have a wish or an idea? <a href="https://github.com/hyperform/hyperform/issues/new">File an issue and let us discuss
+it!</a></p>
+<h2>License</h2>
+<p>This library is released under the terms of the <a href="LICENSE.md">MIT license</a>.</p>
     </main>
   </body>
 </html>
