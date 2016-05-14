@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hyperform - Examples</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="statics/default_neue.min.css">
+    <link rel="stylesheet" href="statics/prism.css">
+    <link rel="stylesheet" href="statics/hyperform.css">
+    <link rel="stylesheet" href="statics/base.css">
+  </head>
+  <body>
+    <article>
+      <header>
+        <h1><a href="https://github.com/hyperform/hyperform"><img src="statics/header.png" alt="Text “Hyperform - Insert Form” in 80s arcade game style" style="max-width:100%;"></a></h1>
+        <h2>Capture form validation back from the browser</h2>
+      </header>
+      <p>
+        The examples show how many common problems in form handling can
+        be solved quite easily with the HTML5 validation API and the
+        enhancements provided by Hyperform:
+      </p>
+      <nav id="nav">
+        <ul>
+          <li><a href="examples/simple.html">Simple required field</a></li>
+          <li><a href="examples/password_confirm.html">Password confirmation</a></li>
+          <li><a href="examples/conditional_requirement.html">Conditional requirement</a></li>
+          <li><a href="examples/types.html">Different <code>&lt;input></code> types</a></li>
+        </ul>
+      </nav>
+      <main id="stage"></main>
+      <pre class="language-markup" id="code"></pre>
+      <p><a href=".">Back to the frontpage</a></p>
+    </article>
+    <script src="statics/hyperform.min.js"></script>
+    <script src="statics/prism.js"></script>
+    <script>
+if (document.location.hash.search(/#file=/) === 0) {
+  var example = decodeURIComponent(document.location.hash.substr(6));
+  if (/^[a-z_]+$/.test(example)) {
+    show('examples/'+example+'.html');
+  }
+}
+
+function show(example) {
+  document.body.classList.add('loading');
+  fetch(example)
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(markup) {
+      document.getElementById('code').innerHTML =
+        Prism.highlight(markup, Prism.languages.markup);
+      document.getElementById('stage').innerHTML = markup;
+      var scripts = document.getElementById('stage').getElementsByTagName('script');
+      for (var i = 0; i < scripts.length; i++) {
+        eval(scripts[i].textContent);
+      }
+      document.body.classList.remove('loading');
+    });
+}
+
+document.addEventListener('submit', function(event) {
+  event.preventDefault();
+  alert('Congratulations! The form can be submitted successfully.');
+});
+
+document.getElementById('nav').addEventListener('click', function(event) {
+  if (event.target.nodeName === 'A') {
+    event.preventDefault();
+    var hash = event.target.href.replace(/.*examples\/([a-z_]+)\.html/, '$1');
+    if (/^[a-z_]+$/.test(hash)) {
+      document.location.hash = '#file='+hash;
+    }
+    show(event.target.href);
+    Array.prototype.map.call(
+      document.getElementById('nav').querySelectorAll('.active'),
+      function (item) {
+        item.classList.remove('active');
+      });
+    event.target.classList.add('active');
+  }
+});
+    </script>
+  </body>
+</html>
