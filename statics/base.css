@@ -21,6 +21,22 @@ a:hover {
   border-bottom: 1px solid;
 }
 
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+nav li {
+  margin-left: 0;
+  padding-left: 22px;
+  background: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f47e.png) no-repeat left 4px;
+  background-size: 16px;
+}
+
+nav li.github {
+  background-image: url(https://assets-cdn.github.com/images/icons/emoji/octocat.png);
+}
+
 #stage {
   border: 1px solid #eee;
   padding: 1em 1.5em;
