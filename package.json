@@ -1,0 +1,22 @@
+{
+  "name": "hyperform.github.io",
+  "version": "1.0.0",
+  "description": "Hyperform's website",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperform/hyperform.github.io.git"
+  },
+  "author": "Manuel Strehl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hyperform/hyperform.github.io/issues"
+  },
+  "homepage": "https://github.com/hyperform/hyperform.github.io#readme"
+}

@@ -1,0 +1,40 @@
+<form>
+  <p>
+    <label>
+      <input type="checkbox" name="foo" id="checkbox">
+      Click me
+    </label>
+  </p>
+  <p>
+    <label>
+      This text field becomes required, when the checkbox is clicked.<br>
+      <input type="text" name="bar" id="textfield">
+    </label>
+  </p>
+  <p>
+    <button>go</button>
+  </p>
+</form>
+<script>
+/* register a custom validator for the text field */
+hyperform.register(
+  document.getElementById('textfield'),
+  function (element) {
+    var valid = ! (document.getElementById('checkbox').checked &&
+                   ! element.value);
+    element.setCustomValidity(
+      valid?
+        '' :
+        'Please enter text here, because you checked the checkbox above.'
+    );
+    return valid;
+  }
+);
+
+/* whenever the checkbox is clicked, revalidate the text field, too */
+document.getElementById('checkbox').addEventListener('click', function() {
+  document.getElementById('textfield').reportValidity();
+});
+
+hyperform(window);
+</script>

@@ -1,0 +1,60 @@
+<form>
+  <div class="row">
+    <p class="span">
+      <label for="number">Number:<br>
+        <input type="number" name="number" id="number">
+      </label>
+    </p>
+    <p class="span">
+      <label for="url">URL:<br>
+        <input type="url" name="url" id="url">
+      </label>
+    </p>
+    <p class="span">
+      <label for="email">E-Mail address:<br>
+        <input type="email" name="email" id="email">
+      </label>
+    </p>
+  </div>
+  <div class="row">
+    <p class="span">
+      <label for="tel">Phone number:<br>
+        <input type="tel" name="tel" id="tel">
+      </label>
+      <span class="help">there is no default validation associated with those.</span>
+    </p>
+    <p class="span">
+      <label for="color">Color:<br>
+        <input type="color" name="color" id="color">
+      </label>
+      <span class="help">must be in format <code>#[a-f0-9]{6}</code>.</span>
+    </p>
+    <p class="span">
+      <label for="range">Range:<br>
+        <input type="range" name="range" id="range">
+      </label>
+    </p>
+  </div>
+  <div class="row">
+    <p class="span">
+      <label for="date">Date:<br>
+        <input type="date" name="date" id="date">
+      </label>
+    </p>
+    <p class="span">
+      <label for="time">Time:<br>
+        <input type="time" name="time" id="time">
+      </label>
+      <span class="help">in 1-minute steps</span>
+    </p>
+    <p class="span">
+      <label for="month">Month:<br>
+        <input type="month" name="month" id="month">
+      </label>
+    </p>
+  </div>
+  <p>
+    <button>go!</button>
+  </p>
+</form>
+<script>hyperform(window);</script>

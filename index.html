@@ -3,15 +3,12 @@
   <head>
     <meta charset="UTF-8">
     <title>Hyperform - Capture form validation back from the browser</title>
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="statics/default_neue.min.css">
+    <link rel="stylesheet" href="statics/prism.css">
+    <link rel="stylesheet" href="statics/hyperform.css">
+    <link rel="stylesheet" href="statics/base.css">
     <style>
-body {
-  font: normal 100%/1.5 Arial,Helvetica,sans-serif;
-  margin: 0;
-}
-main {
-  max-width: 40em;
-  margin: 1.5em auto 3em;
-}
 pre, code {
   font: normal .9em/1.666667 DejaVu Sans Mono,Inconsolata,Consolas,Liberation Mono,Menlo,Courier,monospace;
   background: #f1eef2;
@@ -28,14 +25,16 @@ td {
   padding: .375em;
 }
 tbody > tr:nth-child(2n) > td {
-  background: #fef4ff;
+  background: #f9f4ff;
 }
     </style>
   </head>
   <body>
-    <main>
-      <h1><a href="https://github.com/hyperform/hyperform"><img src="https://github.com/hyperform/hyperform/raw/master/stuff/header.png" alt="Text “Hyperform - Insert Form” in 80s arcade game style" style="max-width:100%;"></a></h1>
-      <h2>Capture form validation back from the browser</h2>
+    <article>
+      <header>
+        <h1><a href="https://github.com/hyperform/hyperform"><img src="https://github.com/hyperform/hyperform/raw/master/stuff/header.png" alt="Text “Hyperform - Insert Form” in 80s arcade game style" style="max-width:100%;"></a></h1>
+        <h2>Capture form validation back from the browser</h2>
+      </header>
 
       <p>Hyperform is a complete implementation of the HTML 5 form validation API
       in Javascript. It replaces the browser’s native methods (if it even
@@ -58,6 +57,8 @@ tbody > tr:nth-child(2n) > td {
       <pre><code>&lt;script src="path/to/hyperform/dist/hyperform.min.js"&gt;&lt;/script&gt; </code></pre>
 
       <h2>Usage</h2>
+
+      <p>Check out the <a href="examples.html">examples</a>!</p>
 
       <p>The library introduces the global variable <code>hyperform</code>. You
       can let Hyperform take over a single form:</p>
@@ -224,6 +225,6 @@ tbody > tr:nth-child(2n) > td {
       <h2>License</h2>
 
       <p>This library is released under the terms of the <a href="https://github.com/hyperform/hyperform/blob/master/LICENSE.md">MIT license</a>.</p>
-    </main>
+    </article>
   </body>
 </html>
