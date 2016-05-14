@@ -66,7 +66,7 @@ document.addEventListener('submit', function(event) {
 });
 
 document.getElementById('nav').addEventListener('click', function(event) {
-  if (event.target.nodeName === 'A') {
+  if (event.target.nodeName === 'A' || event.target.parentNode.nodeName === 'A') {
     event.preventDefault();
     var hash = event.target.href.replace(/.*examples\/([a-z_]+)\.html/, '$1');
     if (/^[a-z_]+$/.test(hash)) {
