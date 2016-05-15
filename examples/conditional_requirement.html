@@ -15,13 +15,14 @@
     <button>go</button>
   </p>
 </form>
+
 <script>
 /* register a custom validator for the text field */
 hyperform.register(
   document.getElementById('textfield'),
   function (element) {
-    var valid = ! (document.getElementById('checkbox').checked &&
-                   ! element.value);
+    var valid = ! document.getElementById('checkbox').checked ||
+                element.value;
     element.setCustomValidity(
       valid?
         '' :

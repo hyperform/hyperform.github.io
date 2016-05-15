@@ -1,3 +1,8 @@
+body {
+  background: white url("sky.png") no-repeat center top;
+  background-size: 100% 150px;
+}
+
 article {
   max-width: 40em;
 }
@@ -35,6 +40,10 @@ nav li {
 
 nav li.github {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/octocat.png);
+}
+
+nav li.active {
+  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f680.png);
 }
 
 #stage {

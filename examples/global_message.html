@@ -1,0 +1,48 @@
+<!-- Kids, don't do this at home! Put error messages close to the
+  fields where they belong. However, for the cases where you really
+  need this kind of functionality, Hyperform has you covered. -->
+
+<form id="form">
+  <div id="errors">
+  </div>
+  <p>
+    <label>
+      Field 1 (URL):<br>
+      <input type="url" name="foo" required id="field1">
+    </label>
+  </p>
+  <p>
+    <label>
+      Field 2 (date):<br>
+      <input type="date" name="bar" required id="field2">
+    </label>
+  </p>
+  <p>
+    <button>go</button>
+  </p>
+</form>
+
+<script>
+var container = document.getElementById('errors');
+
+/* change Hyperform's renderer for warnings to write into the global
+ * error div */
+hyperform.set_renderer('show_warning', function(element) {
+  var target = container.querySelector('[data-for="'+element.name+'"]');
+  if (! target) {
+    /* create an element to place the error message into: */
+    target = document.createElement('div');
+    target.setAttribute('data-for', element.name);
+    container.appendChild(target);
+  }
+
+  var message = element.validationMessage;
+  if (message) {
+    message = element.parentNode.textContent + message;
+  }
+
+  target.textContent = message;
+});
+
+hyperform(window);
+</script>
