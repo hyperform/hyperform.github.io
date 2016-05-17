@@ -46,6 +46,10 @@ nav li.active {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f680.png);
 }
 
+nav li.home {
+  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/2b50.png);
+}
+
 #stage {
   border: 1px solid #eee;
   padding: 1em 1.5em;
