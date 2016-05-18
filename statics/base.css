@@ -26,27 +26,27 @@ a:hover {
   border-bottom: 1px solid;
 }
 
-nav ul {
+ul {
   list-style: none;
   padding-left: 0;
 }
 
-nav li {
+ul li {
   margin-left: 0;
   padding-left: 22px;
   background: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f47e.png) no-repeat left 4px;
   background-size: 16px;
 }
 
-nav li.github {
+ul li.github {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/octocat.png);
 }
 
-nav li.active {
+ul li.active {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f680.png);
 }
 
-nav li.home {
+ul li.home {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/2b50.png);
 }
 
@@ -74,6 +74,18 @@ nav li.home {
   font-size: smaller;
 }
 
+
+table {
+  border-collapse: collapse;
+}
+th,
+td {
+  border: 1px solid #f1eef2;
+  padding: .375em;
+}
+tbody > tr:nth-child(2n) > td {
+  background: #f9f4ff;
+}
 
 
 #footer {
