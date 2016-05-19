@@ -3,8 +3,7 @@
   need this kind of functionality, Hyperform has you covered. -->
 
 <form id="form">
-  <div id="errors">
-  </div>
+  <div id="errors"></div>
   <p>
     <label>
       Field 1 (URL):<br>
@@ -25,24 +24,20 @@
 <script>
 var container = document.getElementById('errors');
 
-/* change Hyperform's renderer for warnings to write into the global
- * error div */
-hyperform.set_renderer('show_warning', function(element) {
-  var target = container.querySelector('[data-for="'+element.name+'"]');
-  if (! target) {
-    /* create an element to place the error message into: */
-    target = document.createElement('div');
-    target.setAttribute('data-for', element.name);
-    container.appendChild(target);
+/* change Hyperform's renderer to write into the global error div */
+hyperform.set_renderer('attach_warning', function(warning, element) {
+  if (element.labels && element.labels.length) {
+    /* add the label's text, if we have one (only Chrome at the moment) */
+    warning.insertAdjacentText('afterbegin', element.labels[0].textContent);
   }
 
-  var message = element.validationMessage;
-  if (message) {
-    message = element.parentNode.textContent + message;
-  }
-
-  target.textContent = message;
+  container.appendChild(warning);
 });
 
-hyperform(window);
+hyperform(window, {
+  classes: {
+    // the default .hf-warning has a special style appended. Change the class:
+    warning: 'warning'
+  }
+});
 </script>
