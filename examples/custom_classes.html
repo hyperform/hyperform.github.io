@@ -1,0 +1,23 @@
+<form>
+  <p>
+    <label>
+      Check the classes of the input and the error message in the developer
+      tools of your browser.<br>
+      <input type="text" name="foo" required>
+    </label>
+  </p>
+  <p>
+    <button>go</button>
+  </p>
+</form>
+
+<script>
+hyperform(window, {
+  classes: {
+    valid: 'yay',
+    invalid: 'oooh',
+    validated: 'first!',
+    warning: 'shoot why is there a warning?',
+  }
+});
+</script>
