@@ -41,6 +41,8 @@
     <script src="statics/hyperform.min.js"></script>
     <script src="statics/prism.js"></script>
     <script>
+var gi_hyp;
+
 if (document.location.hash.search(/#file=/) === 0) {
   var example = decodeURIComponent(document.location.hash.substr(6));
   if (/^[a-z_]+$/.test(example)) {
@@ -58,9 +60,12 @@ function show(example) {
       document.getElementById('code').innerHTML =
         Prism.highlight(markup, Prism.languages.markup);
       document.getElementById('stage').innerHTML = markup;
+      if (gi_hyp && 'destroy' in gi_hyp) {
+        gi_hyp.destroy();
+      }
       var scripts = document.getElementById('stage').getElementsByTagName('script');
       for (var i = 0; i < scripts.length; i++) {
-        eval(scripts[i].textContent);
+        eval(scripts[i].textContent.replace(/\bhyperform\(window/, 'gi_hyp = $&'));
       }
       document.body.classList.remove('loading');
     });
