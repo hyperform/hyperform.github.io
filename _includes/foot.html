@@ -1,0 +1,64 @@
+{% if page.examplejs %}
+  <script src="statics/prism.js"></script>
+  <script src="statics/hyperform.min.js"></script>
+  <script>
+var gi_hyp;
+
+if (document.location.hash.search(/#file=/) === 0) {
+  var example = decodeURIComponent(document.location.hash.substr(6));
+  if (/^[a-z_]+$/.test(example)) {
+    show('examples/'+example+'.html');
+  }
+}
+
+function show(example) {
+  document.body.classList.add('loading');
+  fetch(example)
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(markup) {
+      document.getElementById('code').innerHTML =
+        Prism.highlight(markup, Prism.languages.markup);
+      document.getElementById('stage').innerHTML = markup;
+      if (gi_hyp && 'destroy' in gi_hyp) {
+        gi_hyp.destroy();
+      }
+      var scripts = document.getElementById('stage').getElementsByTagName('script');
+      for (var i = 0; i < scripts.length; i++) {
+        eval(scripts[i].textContent.replace(/\bhyperform\(window/, 'gi_hyp = $&'));
+      }
+      document.body.classList.remove('loading');
+    });
+}
+
+document.addEventListener('submit', function(event) {
+  event.preventDefault();
+  alert('Congratulations! The form can be submitted successfully.');
+});
+
+document.getElementById('nav').addEventListener('click', function(event) {
+  var node = event.target;
+  if (node.nodeName !== 'A') {
+    if (node.parentNode.nodeName === 'A') {
+      node = node.parentNode;
+    } else {
+      return;
+    }
+  }
+
+  event.preventDefault();
+  var hash = node.href.replace(/.*examples\/([a-z_]+)\.html/, '$1');
+  if (/^[a-z_]+$/.test(hash)) {
+    document.location.hash = '#file='+hash;
+  }
+  show(node.href);
+  Array.prototype.map.call(
+    document.getElementById('nav').querySelectorAll('.active'),
+    function (item) {
+      item.classList.remove('active');
+    });
+  node.parentNode.classList.add('active');
+});
+  </script>
+{% endif %}

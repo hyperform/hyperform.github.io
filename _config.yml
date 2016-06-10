@@ -1,0 +1,40 @@
+title: Hyperform - Capture form validation back from the browser
+description: >
+    Hyperform is a complete implementation of the HTML 5 form validation API
+    in Javascript. It replaces the browser’s native methods (if it even
+    implements them…) and enriches it with custom events and hooks.
+baseurl: "/"
+url: "https://hyperform.js.org"
+twitter_username: m_strehl
+github_username:  hyperform
+
+permalink: none
+
+# Build settings
+markdown: kramdown
+
+exclude: ["CNAME", "src", "package.json", "Makefile"]
+
+defaults:
+  -
+    values:
+        layout: "default"
+  -
+    scope:
+        path: "docs"
+    values:
+        layout: "docs"
+
+# Github settings:
+kramdown:
+    input: GFM
+    hard_wrap: false
+
+gems:
+    - jekyll-paginate
+    - jemoji
+
+highlighter: rouge
+
+gist:
+    noscript: false

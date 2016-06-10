@@ -4,7 +4,11 @@ body {
 }
 
 article {
-  max-width: 40em;
+  max-width: 41em;
+}
+
+main {
+  padding: 0 .5em;
 }
 
 header {
@@ -106,4 +110,14 @@ tbody > tr:nth-child(2n) > td {
 #footer a:focus,
 #footer a:hover {
   color: #664C67;
+}
+
+.highlight {
+  background: #272822;
+  color: #f8f8f2;
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
