@@ -1,16 +1,7 @@
-<nav>
-  <ul class="nav nav-list">
-    <li><a href="{{ site.baseurl }}">Home</a></li>
-    {% for section in site.sections %}
-      {% assign attr = section[0] %}
-      {% assign label = section[1] %}
-
-      {% for page in site.categories[attr] %}
-        {% if forloop.first %}
-          <li class="nav-header">{{ label }}</li>
-        {% endif %}
-        <li data-order="{{ page.order }}"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
-      {% endfor %}
-    {% endfor %}
+<nav class="page-nav nav">
+  <ul class="nav__list">
+    <li class="nav__item"><a class="nav__link home"   href="{{ site.baseurl }}">Home</a></li>
+    <li class="nav__item"><a class="nav__link docs"   href="{{ site.baseurl }}docs/">Documentation</a></li>
+    <li class="nav__item"><a class="nav__link github" href="https://github.com/hyperform/hyperform">Github project page</a></li>
   </ul>
 </nav>

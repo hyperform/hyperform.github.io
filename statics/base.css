@@ -54,6 +54,10 @@ ul li.home {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/2b50.png);
 }
 
+ul li.docs {
+  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d6.png);
+}
+
 #stage {
   border: 1px solid #eee;
   padding: 1em 1.5em;
@@ -92,26 +96,6 @@ tbody > tr:nth-child(2n) > td {
 }
 
 
-#footer {
-  background: #240A29 url(cave.png) repeat-x center top;
-  color: white;
-  padding: 200px 0;
-}
-
-#footer > * {
-  max-width: 40em;
-  margin: 0 auto;
-}
-
-#footer a {
-  color: #B8A1BD;
-}
-
-#footer a:focus,
-#footer a:hover {
-  color: #664C67;
-}
-
 .highlight {
   background: #272822;
   color: #f8f8f2;
@@ -120,4 +104,61 @@ tbody > tr:nth-child(2n) > td {
   overflow: auto;
   border-radius: 0.3em;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+
+
+.page-footer {
+  background: #240A29 url(cave.png) repeat-x center top;
+  color: white;
+  padding: 200px 0;
+}
+
+.page-footer > * {
+  max-width: 40em;
+  margin: 0 auto;
+}
+
+.page-footer a {
+  color: #B8A1BD;
+}
+
+.page-footer a:focus,
+.page-footer a:hover {
+  color: #664C67;
+}
+
+
+.page-nav .nav__list {
+  display: flex;
+}
+
+.page-nav .nav__item {
+  padding-left: 0;
+  background: none;
+}
+
+.page-nav .nav__item + .nav__item {
+  margin-left: 1em;
+}
+
+.page-nav .nav__link {
+  padding: .5em .5em .5em 1.667em;
+  background: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f47e.png) no-repeat left 8px;
+  background-size: 16px;
+}
+
+.page-nav .nav__link.github {
+  background-image: url(https://assets-cdn.github.com/images/icons/emoji/octocat.png);
+}
+
+.page-nav .nav__link.active {
+  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f680.png);
+}
+
+.page-nav .nav__link.home {
+  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/2b50.png);
+}
+
+.page-nav .nav__link.docs {
+  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d6.png);
 }
