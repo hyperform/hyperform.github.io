@@ -4,14 +4,6 @@ Hyperform is a complete implementation of the HTML 5 form validation API in
 Javascript. It replaces the browser’s native methods (if it even implements
 them…) and enriches it with custom events and hooks.
 
-<nav>
-  <ul>
-    <li class="github">
-      <a href="https://github.com/hyperform/hyperform">Github project page</a>
-    </li>
-  </ul>
-</nav>
-
 ## Installation
 
 The easiest way is installing via `npm`:
@@ -91,28 +83,29 @@ for prime time?
 
 | feature                      | status      | comment            |
 | ---------------------------- | ----------- | ------------------ |
-| `willValidate`               | :full_moon: | :heavy_check_mark: |
-| `setCustomValidity(message)` | :full_moon: | :heavy_check_mark: |
-| `validity.valueMissing`      | :full_moon: | :heavy_check_mark: (access via `hyperform.validityState`) |
-| `validity.typeMismatch`      | :full_moon: | :heavy_check_mark: (access via `hyperform.validityState`) |
-| `validity.patternMismatch`   | :full_moon: | :heavy_check_mark: (access via `hyperform.validityState`) |
-| `validity.tooLong`           | :full_moon: | :heavy_check_mark: (access via `hyperform.validityState`) |
-| `validity.tooShort`          | :full_moon: | :heavy_check_mark: (access via `hyperform.validityState`) |
-| `validity.rangeUnderflow`    | :full_moon: | :heavy_check_mark: (access via `hyperform.validityState`) |
-| `validity.rangeOverflow`     | :full_moon: | :heavy_check_mark: (access via `hyperform.validityState`) |
-| `validity.stepMismatch`      | :full_moon: | :heavy_check_mark: (access via `hyperform.validityState`) |
-| `validity.badInput`          | :full_moon: | :heavy_check_mark: (access via `hyperform.validityState`) |
-| `validity.customError`       | :full_moon: | :heavy_check_mark: (access via `hyperform.validityState`) |
-| `validity.valid`             | :full_moon: | :heavy_check_mark: (access via `hyperform.validityState`) |
-| `checkValidity()`            | :full_moon: | :heavy_check_mark: |
-| `reportValidity()`           | :full_moon: | :heavy_check_mark: |
-| `validationMessage`          | :full_moon: | :heavy_check_mark: |
-| `valueAsDate`                | :full_moon: | :heavy_check_mark: |
-| `valueAsNumber`              | :full_moon: | :heavy_check_mark: |
+| `willValidate`               | :full_moon: | |
+| `setCustomValidity(message)` | :full_moon: | |
+| `validity.valueMissing`      | :full_moon: | (access via `hyperform.validityState`) |
+| `validity.typeMismatch`      | :full_moon: | (access via `hyperform.validityState`) |
+| `validity.patternMismatch`   | :full_moon: | (access via `hyperform.validityState`) |
+| `validity.tooLong`           | :full_moon: | (access via `hyperform.validityState`) |
+| `validity.tooShort`          | :full_moon: | (access via `hyperform.validityState`) |
+| `validity.rangeUnderflow`    | :full_moon: | (access via `hyperform.validityState`) |
+| `validity.rangeOverflow`     | :full_moon: | (access via `hyperform.validityState`) |
+| `validity.stepMismatch`      | :full_moon: | (access via `hyperform.validityState`) |
+| `validity.badInput`          | :full_moon: | (access via `hyperform.validityState`) |
+| `validity.customError`       | :full_moon: | (access via `hyperform.validityState`) |
+| `validity.valid`             | :full_moon: | (access via `hyperform.validityState`) |
+| `checkValidity()`            | :full_moon: | |
+| `reportValidity()`           | :full_moon: | |
+| `validationMessage`          | :full_moon: | |
+| `valueAsDate`                | :full_moon: | |
+| `valueAsNumber`              | :full_moon: | |
 | `valueLow` / `valueHigh`     | :new_moon:  | not started, yet   |
-| `stepUp(n)` / `stepDown(n)`  | :full_moon: | :heavy_check_mark: |
-| `accept` attribute           | :full_moon: | :heavy_check_mark: for `type=file` inputs. It’s useful to implement a check because there are browsers without support, that implement the File API. |
-| support for `novalidate`     | :full_moon: | :heavy_check_mark: |
+| `stepUp(n)` / `stepDown(n)`  | :full_moon: | |
+| `accept` attribute           | :full_moon: | for `type=file` inputs. It’s useful to implement a check because there are browsers without support, that implement the File API. |
+| support for `novalidate`     | :full_moon: | |
+| support for properties like `element.pattern` | :full_moon: | |
 
 What parts of the high-level API are finished?
 
