@@ -130,6 +130,7 @@ tbody > tr:nth-child(2n) > td {
 
 .nav__list {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .nav--vertical .nav__list {

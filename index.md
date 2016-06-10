@@ -1,5 +1,4 @@
 ---
-title: Insert Form
 id: home
 ---
 Hyperform is a complete implementation of the HTML 5 form validation API in
