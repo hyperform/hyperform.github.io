@@ -16,7 +16,7 @@ header {
 }
 
 pre {
-  font-size: .875em;
+  font-size: 1.1em;
 }
 
 a {
@@ -128,37 +128,50 @@ tbody > tr:nth-child(2n) > td {
 }
 
 
-.page-nav .nav__list {
+.nav__list {
   display: flex;
 }
 
-.page-nav .nav__item {
+.nav--vertical .nav__list {
+  flex-direction: column;
+}
+
+.nav__item {
   padding-left: 0;
   background: none;
 }
 
-.page-nav .nav__item + .nav__item {
+.nav__item + .nav__item {
   margin-left: 1em;
 }
 
-.page-nav .nav__link {
+.nav--vertical .nav__item + .nav__item {
+  margin-left: 0;
+  margin-top: .5em;
+}
+
+.nav__link {
   padding: .5em .5em .5em 1.667em;
   background: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f47e.png) no-repeat left 8px;
   background-size: 16px;
 }
 
-.page-nav .nav__link.github {
+.nav__link.github {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/octocat.png);
 }
 
-.page-nav .nav__link.active {
-  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f680.png);
-}
-
-.page-nav .nav__link.home {
+.nav__link.home {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/2b50.png);
 }
 
-.page-nav .nav__link.docs {
+.nav__link.examples {
+  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f527.png);
+}
+
+.nav__link.docs {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d6.png);
+}
+
+.nav__link.active {
+  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f680.png);
 }

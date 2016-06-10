@@ -3,7 +3,7 @@ description: >
     Hyperform is a complete implementation of the HTML 5 form validation API
     in Javascript. It replaces the browser’s native methods (if it even
     implements them…) and enriches it with custom events and hooks.
-baseurl: "/"
+baseurl: ""
 url: "https://hyperform.js.org"
 twitter_username: m_strehl
 github_username:  hyperform

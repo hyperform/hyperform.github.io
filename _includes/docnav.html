@@ -1,16 +1,8 @@
-<nav>
-  <ul class="nav nav-list">
-    <li><a href="{{ site.baseurl }}">Home</a></li>
-    {% for section in site.sections %}
-      {% assign attr = section[0] %}
-      {% assign label = section[1] %}
-
-      {% for page in site.categories[attr] %}
-        {% if forloop.first %}
-          <li class="nav-header">{{ label }}</li>
-        {% endif %}
-        <li data-order="{{ page.order }}"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></li>
-      {% endfor %}
-    {% endfor %}
+<nav class="nav nav--vertical">
+  <ul class="nav__list">
+    <li class="nav__item"><a class="nav__link docs {% if page.id == 'docs' %}active{% endif %}" href="{{ site.baseurl }}/docs/">Documentation Home</a></li>
+    <li class="nav__item"><a class="nav__link {% if page.id == 'docs-install' %}active{% endif %}" href="{{ site.baseurl }}/docs/install.html">Installation</a></li>
+    <li class="nav__item"><a class="nav__link {% if page.id == 'docs-usage' %}active{% endif %}" href="{{ site.baseurl }}/docs/usage.html">Usage</a></li>
+    <li class="nav__item"><a class="nav__link {% if page.id == 'docs-status' %}active{% endif %}" href="{{ site.baseurl }}/docs/status.html">Status</a></li>
   </ul>
 </nav>

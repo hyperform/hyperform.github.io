@@ -1,13 +1,13 @@
 <head>
   <meta charset="UTF-8">
-  <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title | strip_html }} - {% endif %}{{ site.title }}</title>
   <meta name="viewport" content="width=device-width initial-scale=1">
   <meta name="description" content="{{ site.description }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:400,700">
-  <link rel="stylesheet" href="{{ site.baseurl }}statics/default_neue.min.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}statics/monokai.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}statics/hyperform.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}statics/base.css">
-  <link rel="shortcut icon" href="{{ site.baseurl }}favicon.ico">
+  <link rel="stylesheet" href="{{ site.baseurl }}/statics/default_neue.min.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/statics/monokai.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/statics/hyperform.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}/statics/base.css">
+  <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico">
 </head>
