@@ -1,6 +1,4 @@
 {% if page.id == 'examples' %}
-  <link rel="stylesheet" href="{{ site.baseurl }}/statics/prism.css">
-  <script src="statics/prism.js"></script>
   <script src="statics/hyperform.min.js"></script>
   <script>
 var gi_hyp;
@@ -19,9 +17,11 @@ function show(example) {
       return response.text();
     })
     .then(function(markup) {
-      document.getElementById('code').innerHTML =
-        Prism.highlight(markup, Prism.languages.markup);
-      document.getElementById('stage').innerHTML = markup;
+      var parts = markup.split('<'+'!--EOF--'+'>');
+
+      document.getElementById('stage').innerHTML = parts[0];
+      document.getElementById('code').innerHTML = parts[1];
+
       if (gi_hyp && 'destroy' in gi_hyp) {
         gi_hyp.destroy();
       }

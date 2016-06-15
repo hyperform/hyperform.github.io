@@ -99,7 +99,6 @@ tbody > tr:nth-child(2n) > td {
 
 /* Source Code Highlighting */
 
-body pre[class*="language-"],
 .highlight {
   background: #272822;
   color: #f8f8f2;
@@ -109,6 +108,10 @@ body pre[class*="language-"],
   overflow: auto;
   border-radius: 0.3em;
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.highlight pre {
+  margin: 0;
 }
 
 
