@@ -135,6 +135,7 @@ tbody > tr:nth-child(2n) > td {
 
 /* Navigation */
 
+/* special sub-nav for docs */
 .nav--docs {
   float: right;
   max-width: 15em;
@@ -202,6 +203,7 @@ tbody > tr:nth-child(2n) > td {
 
 .nav__link.active {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f680.png);
+  color: inherit;
 }
 
 
