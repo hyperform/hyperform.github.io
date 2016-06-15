@@ -21,6 +21,11 @@ defaults:
         layout: "default"
   -
     scope:
+        path: "index.md"
+    values:
+        nonav: "1"
+  -
+    scope:
         path: "docs"
     values:
         layout: "docs"

@@ -8,3 +8,6 @@ validation result.
 
 To check, if an element will be validated at all (or whether it will be skipped
 for one reason or another), try `willValidate`.
+
+:gem: Next: [Extra Hyperform Features](high_level_api.html) – functionality
+added beyond standard HTML 5 validation.

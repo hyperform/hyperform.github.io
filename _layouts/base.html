@@ -4,7 +4,9 @@
   <body>
     <article>
       {% include header.html %}
-      {% include navigation.html %}
+      {% if page.nonav != '1' %}
+        {% include navigation.html %}
+      {% endif %}
       {{ content }}
     </article>
     {% include footer.html %}

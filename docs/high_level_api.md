@@ -51,3 +51,6 @@ id: docs-usage-high
     ```html
     <input required data-value-missing="We need this field!">
     ```
+
+:gem: Next: [Conformance _&_ status](status.html) – what parts of the HTML 5
+validation API are supported, and what are the plans for additional features.

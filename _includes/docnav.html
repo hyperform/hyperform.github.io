@@ -1,10 +1,10 @@
-<nav class="nav nav--vertical">
+<nav class="nav nav--vertical nav--docs">
   <ul class="nav__list">
     <li class="nav__item"><a class="nav__link docs {% if page.id == 'docs' %}active{% endif %}" href="{{ site.baseurl }}/docs/">Documentation Home</a></li>
     <li class="nav__item"><a class="nav__link {% if page.id == 'docs-install' %}active{% endif %}" href="{{ site.baseurl }}/docs/install.html">Installation</a></li>
     <li class="nav__item"><a class="nav__link {% if page.id == 'docs-usage' %}active{% endif %}" href="{{ site.baseurl }}/docs/usage.html">Usage</a>
       <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link {% if page.id == 'docs-usage-low' %}active{% endif %}" href="{{ site.baseurl }}/docs/low_level_api.html">HTML 5</a></li>
+        <li class="nav__item"><a class="nav__link {% if page.id == 'docs-usage-low' %}active{% endif %}" href="{{ site.baseurl }}/docs/low_level_api.html">HTML 5 API</a></li>
         <li class="nav__item"><a class="nav__link {% if page.id == 'docs-usage-high' %}active{% endif %}" href="{{ site.baseurl }}/docs/high_level_api.html">Extra Hyperform Features</a></li>
       </ul>
     </li>

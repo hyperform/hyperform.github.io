@@ -27,7 +27,8 @@ a {
 a:focus,
 a:hover {
   color: #66246C;
-  border-bottom: 1px solid;
+  box-shadow: inset 0 -1px 0 0 #66246C,
+              inset 0 -5px 5px -5px #66246C;
 }
 
 ul {
@@ -96,6 +97,8 @@ tbody > tr:nth-child(2n) > td {
 }
 
 
+/* Source Code Highlighting */
+
 .highlight {
   background: #272822;
   color: #f8f8f2;
@@ -106,6 +109,8 @@ tbody > tr:nth-child(2n) > td {
   text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 }
 
+
+/* Page Footer */
 
 .page-footer {
   background: #240A29 url(cave.png) repeat-x center top;
@@ -128,14 +133,35 @@ tbody > tr:nth-child(2n) > td {
 }
 
 
+/* Navigation */
+
+.nav--docs {
+  float: right;
+  max-width: 15em;
+  margin: 0 0 1em 1em;
+}
+
+@media (min-width: 71em) {
+  .nav--docs {
+    margin-right: -16em;
+  }
+}
+
+
 .nav__list {
   display: flex;
   flex-wrap: wrap;
 }
 
+.nav__list .nav__list {
+  margin-left: 2em;
+  margin-top: .5em;
+}
+
 .nav--vertical .nav__list {
   flex-direction: column;
 }
+
 
 .nav__item {
   padding-left: 0;
@@ -148,13 +174,14 @@ tbody > tr:nth-child(2n) > td {
 
 .nav--vertical .nav__item + .nav__item {
   margin-left: 0;
-  margin-top: .5em;
+  margin-top: .25em;
 }
 
 .nav__link {
-  padding: .5em .5em .5em 1.667em;
+  display: block;
   background: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f47e.png) no-repeat left 8px;
   background-size: 16px;
+  padding: .25em .5em .25em 1.667em;
 }
 
 .nav__link.github {
@@ -175,4 +202,36 @@ tbody > tr:nth-child(2n) > td {
 
 .nav__link.active {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f680.png);
+}
+
+
+/* Maxotron on Front Page */
+.max {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px -10px;
+}
+
+.max__l {
+  display: block;
+  margin: 10px;
+  border: 1px solid #78397E;
+  border-radius: 1px;
+  padding: 10px;
+  text-align: center;
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 10em;
+}
+
+.max__l:focus,
+.max__l:hover {
+  border-color: #66246C;
+  box-shadow: inset 0 -10px 5px -5px #78397E;
+  box-shadow: 0 0 15px 1px #FFFEC5;
+}
+
+.max__i {
+  display: block;
+  margin: 0 auto 10px;
 }

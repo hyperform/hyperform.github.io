@@ -21,10 +21,9 @@ Use Hyperform in your Javascript:
 var wrapper = hyperform(window);
 ```
 
-## Contents
+## Examples
 
-*   [Installation](install.html) – how to get this thing up and running
-*   [Usage](usage.html) – all the things you can do with Hyperform
-*   [Conformance and status](status.html) – what parts of the HTML 5
-    validation API are supported, and what are the plans for additional
-    features.
+See [running examples](../examples.html) that showcase how to elegantly solve
+common form problems with Hyperform.
+
+:gem: Next: [Installation](install.html) – how to get this thing up and running
