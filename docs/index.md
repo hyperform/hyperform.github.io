@@ -12,7 +12,8 @@ Add Hyperform to your HTML page:
 
 ```html
 <script src="https://cdn.rawgit.com/hyperform/hyperform/master/dist/hyperform.min.js"></script>
-<!-- please load it from somewhere else in production. -->
+<link rel="stylesheet" href="https://cdn.rawgit.com/hyperform/hyperform/master/css/hyperform.css">
+<!-- please load the files from somewhere else in production. -->
 ```
 
 Use Hyperform in your Javascript:
