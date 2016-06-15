@@ -21,6 +21,8 @@ Use Hyperform in your Javascript:
 var wrapper = hyperform(window);
 ```
 
+From now on you are using enhanced HTML 5 form validation. :+1:
+
 ## Examples
 
 See [running examples](../examples.html) that showcase how to elegantly solve

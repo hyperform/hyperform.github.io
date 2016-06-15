@@ -99,9 +99,11 @@ tbody > tr:nth-child(2n) > td {
 
 /* Source Code Highlighting */
 
+body pre[class*="language-"],
 .highlight {
   background: #272822;
   color: #f8f8f2;
+  font-family: "Droid Sans Mono",monospace;
   padding: 1em;
   margin: .5em 0;
   overflow: auto;
