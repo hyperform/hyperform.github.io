@@ -1,0 +1,41 @@
+---
+layout: example
+---
+<form>
+  <p>
+    <label>
+      This field will show the global message:
+      <input type="text" name="foo" required>
+    </label>
+  </p>
+  <p>
+    <label>
+      This field will show a customized message via script:
+      <input type="text" name="bar" required id="customize_me">
+    </label>
+  </p>
+  <p>
+    <label>
+      This field will show a customized message via
+      <code>data</code> attribute:
+      <input type="text" name="baz" required
+        data-value-missing="Oh noes! You forgot to fill in this very specific field!">
+    </label>
+  </p>
+  <p>
+    <button>go</button>
+  </p>
+</form>
+
+<script>
+hyperform.add_translation('x-klingon', {
+  ValueMissing: 'DubelmoHchugh chaw’nIS yotlh.',
+});
+hyperform.set_language('x-klingon');
+
+hyperform.set_message(document.getElementById('customize_me'),
+  'valueMissing',
+  'A haiku: A form element; Forgotten by the user; The element complains.');
+
+hyperform(window);
+</script>
