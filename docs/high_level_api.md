@@ -3,7 +3,7 @@ title: Using Hyperform’s Validation Enhancements
 id: docs-usage-high
 ---
 
-### React to Validation Results in CSS
+## React to Validation Results in CSS
 
 All validated elements receive helper classes `hf-valid` and `hf-invalid`,
 respectively, as well as proper `aria-invalid` attributes. After the first
@@ -30,7 +30,7 @@ you can use
 ```
 
 
-### Control Validation Flow with Events
+## Control Validation Flow with Events
 
 When an element is validated and found invalid, an event `invalid` is triggered
 on this node. The event is cancellable, and if you decide to cancel it, any
@@ -63,7 +63,7 @@ form.addEventListener('validate', event => {
 ```
 
 
-### Adapt Validation Messages
+## Adapt Validation Messages
 
 You can translate all validation messages and also set the language used. We
 have [some partial translations](https://github.com/hyperform/hyperform-l10n)
@@ -111,7 +111,7 @@ hyperform.set_message(element, 'valueMissing',
                       'Shugs! You need to fill in this form');
 ```
 
-### Other Features
+## Other Features
 
 A registry stores user defined validators, that are called
 automatically in the `validity.customError` step:
@@ -135,6 +135,7 @@ element.noValidate = true;
 // done. element won't be validated.
 ```
 
+----
 
 :gem: Next: [Conformance _&_ status](status.html) – what parts of the HTML 5
 validation API are supported, and what are the plans for additional features.

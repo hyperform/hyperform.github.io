@@ -56,3 +56,8 @@ Todo list and plans for the high-level API:
 
 Do you have a wish or an idea? [File an issue and let us discuss
 it!](https://github.com/hyperform/hyperform/issues/new)
+
+----
+
+:gem: Next: This is the last page of the documentation. Why not [take a look at
+the examples](../examples.html)?

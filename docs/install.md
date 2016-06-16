@@ -47,4 +47,6 @@ the `src` folder:
 import hyperform from 'path/to/hyperform/src/hyperform';
 ```
 
+----
+
 :gem: Next: [Usage](usage.html) – all the things you can do with Hyperform

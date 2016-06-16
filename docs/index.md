@@ -29,4 +29,6 @@ From now on you are using enhanced HTML 5 form validation. :+1:
 See [running examples](../examples.html) that showcase how to elegantly solve
 common form problems with Hyperform.
 
+----
+
 :gem: Next: [Installation](install.html) – how to get this thing up and running

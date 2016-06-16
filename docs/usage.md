@@ -58,5 +58,7 @@ The available settings are:
 | `novalidate_on_elements` | Whether input fields with the non-standard attribute `novalidate` should be exempted from validation. Default: `true`. |
 | `classes`                | CSS class names to use instead of the default ones. This is an object with the possible keys `warning`, `valid`, `invalid`, and `validated`. |
 
+----
+
 :gem: Next: [HTML 5 API](low_level_api.html) – how to use the HTML 5 form
 validation with Hyperform for fun and profit.
