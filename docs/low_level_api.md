@@ -2,11 +2,13 @@
 title: Working with the HTML 5 Validation API
 id: docs-usage-low
 ---
-The HTML 5 validation API is designed to work without Javascript interception,
-only based on the markup that the browser sees. However, there are some entry
-points, where you can influence the course of the validation.
+The [HTML 5 validation
+API](https://html.spec.whatwg.org/multipage/forms.html#the-constraint-validation-api)
+is designed to work without Javascript interception, only based on the markup
+that the browser sees. However, there are some entry points, where you can
+influence the course of the validation.
 
-A typical flow without any Javascript interception looks like this:
+A typical flow without Javascript looks like this:
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" style="width:400px;max-width:100%;display:block;margin:0 auto;">
 <defs>
@@ -19,24 +21,27 @@ orient="auto">
 </marker>
 </defs>
 <g fill="none" stroke-width="4" stroke="#78397E">
-<line x1="150" y1="20" x2="150" y2="580" marker-end="url(#Triangle)"/>
-<line x1="140" y1="20" x2="160" y2="20"/>
-<line x1="140" y1="120" x2="160" y2="120"/>
-<line x1="140" y1="320" x2="160" y2="320"/>
-<path d="M 440,400 A 900,400 0 0,0 440,140" marker-end="url(#Triangle)"/>
+<line x1="50" y1="20" x2="50" y2="580" marker-end="url(#Triangle)"/>
+<line x1="40" y1="20" x2="60" y2="20"/>
+<line x1="40" y1="120" x2="60" y2="120"/>
+<line x1="40" y1="220" x2="60" y2="220"/>
+<line x1="40" y1="320" x2="60" y2="320"/>
+<line x1="40" y1="420" x2="60" y2="420"/>
+<line x1="40" y1="520" x2="60" y2="520"/>
+<path d="M 380,400 A 1200,400 0 0,0 380,140" marker-end="url(#Triangle)"/>
 </g>
 <text font-size="20" font-family="Work Sans,sans-serif" fill="#262422">
-<tspan x="170" y="120">user fills input field</tspan>
-<tspan x="170" y="320">user tries to submit the form</tspan>
-<tspan x="170" y="20">page load</tspan>
-<tspan x="170" y="220"><tspan font-family="monospace">:valid</tspan> and <tspan font-family="monospace">:invalid</tspan> match</tspan>
-<tspan x="170" y="420">errors are reported to the user</tspan>
-<tspan x="170" y="520">without errors the form is submitted</tspan>
+<tspan x="70" y="125">user fills input field</tspan>
+<tspan x="70" y="325">user tries to submit the form</tspan>
+<tspan x="70" y="25">page load</tspan>
+<tspan x="70" y="225"><tspan font-family="monospace">:valid</tspan> and <tspan font-family="monospace">:invalid</tspan> match</tspan>
+<tspan x="70" y="425">errors are reported to the user</tspan>
+<tspan x="70" y="525">without errors the form is submitted</tspan>
 </text>
 </svg>
 
-All the following methods and properties are fully supported by Hyperform.
-When you apply Hyperform to `window`, the polyfills for them will be installed
+All the methods and properties described below are fully supported by Hyperform.
+When you apply Hyperform to `window`, their polyfills will be installed
 globally for all input elements:
 
 ```js
@@ -119,7 +124,7 @@ form.noValidate = true;
 ```
 
 
-## Things, that do not work with the HTML 5 API
+## Things, that do not work well with the HTML 5 API
 
 When you try to hook into the HTML 5 validation API, you will quite soon run
 into a wall that prevents you from implementing some of the most common
