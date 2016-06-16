@@ -113,12 +113,16 @@ hyperform.set_message(element, 'valueMissing',
 
 ## Other Features
 
-A registry stores user defined validators, that are called
-automatically in the `validity.customError` step:
+Define your own validators per input element, that are called automatically in
+the `validity.customError` step:
 
 ```js
 hyperform.register(element, function(element) {
-  return result_of_convoluted_validation_routine();
+  var valid = result_of_convoluted_validation_routine();
+  // now is a good time to set error messages:
+  element.setCustomValidity(valid? '' :
+    'Please follow the on-screen instructions to receive your white rabbit.');
+  return valid;
 });
 
 element.validity.customError? 'the script returned false' :

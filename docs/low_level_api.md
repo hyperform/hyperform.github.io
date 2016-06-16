@@ -107,6 +107,18 @@ if (! element_is_valid) {
 }
 ```
 
+## Switching off the validation
+
+When a form has an attribute `novalidate`, the browser will skip validation
+altogether for this form. You can control this feature in your scripts by
+toggling `form.noValidate` (with upper-case “V”).
+
+```js
+form.noValidate = true;
+// validation is switched off for this form
+```
+
+
 ## Things, that do not work with the HTML 5 API
 
 When you try to hook into the HTML 5 validation API, you will quite soon run
@@ -115,7 +127,40 @@ validation patterns. This is where the [high level API of
 Hyperform](high_level_api.html) comes to rescue. Some common problems, that
 are not solvable with the methods above alone, include:
 
-* TODO. Validation before submit, reacting on input change, ...
+*   You cannot switch off the validation for single elements apart from setting
+    the `disabled` attribute (or a handful of other comparably intrusive
+    methods). If you want to allow a user to enter invalid data, you have to
+    disable the validation for the whole form and reimplement everything
+    yourself.
+
+    _Hyperform_ respects a non-standard attribute `novalidate` on a per
+    element base, so you can remove single input fields from the validation
+    step.
+
+*   When a user tries to submit a form, the browser will run the validation
+    _before_ the `submit` event is fired. This is unfortunate, since there is
+    no option to hook custom behavior into this step (like calling custom
+    validation routines).
+
+    _Hyperform_ allows to register custom validator functions that are called
+    during validation. It also triggers a cancellable `validate` event on the
+    form, before the validation starts.
+
+*   Providing custom validation messages for the standard validations is
+    non-trivial. You have to hook into the `invalid` event for each element,
+    determine again, why exactly it is invalid, and then re-build the message
+    before setting it with `setCustomValidity()` or rendering it yourself.
+
+    _Hyperform_ gives you full localization control as well as methods to
+    adapt _every_ element’s message per validation incident.
+
+*   Detecting when a field becomes _valid_ again is not part of the API.
+
+    _Hyperform_ will trigger a `valid` event on each field, that complements
+    the `invalid` event from the specification.
+
+How all of these work in detail is described on [the next
+page](high_level_api.html).
 
 ----
 
