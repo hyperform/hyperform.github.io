@@ -25,4 +25,4 @@ eases your validation task with custom events and hooks.
 ## License
 
 This library is released under the terms of the [MIT
-license](https://github.com/hyperform/hyperform/LICENSE.md).
+license](LICENSE.html).
