@@ -3,13 +3,6 @@
   <script>
 var gi_hyp;
 
-if (document.location.hash.search(/#file=/) === 0) {
-  var example = decodeURIComponent(document.location.hash.substr(6));
-  if (/^[a-z_]+$/.test(example)) {
-    show('examples/'+example+'.html');
-  }
-}
-
 function show(example) {
   document.body.classList.add('loading');
   fetch(example)
@@ -34,6 +27,14 @@ function show(example) {
       }
       document.body.classList.remove('loading');
     });
+}
+
+if (document.location.hash.search(/#file=/) === 0) {
+  var example = decodeURIComponent(document.location.hash.substr(6));
+  if (/^[a-z_]+$/.test(example)) {
+    show('examples/'+example+'.html');
+    document.querySelector('a[href="examples/'+example+'.html"]').parentNode.classList.add('active');
+  }
 }
 
 document.addEventListener('submit', function(event) {
