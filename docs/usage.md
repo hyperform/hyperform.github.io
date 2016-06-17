@@ -49,14 +49,37 @@ hyperform(window, {
 
 The available settings are:
 
-| Setting                  | Description                                      |
-| ------------------------ | ------------------------------------------------ |
-| `strict`                 | When `true`, disable the high-level API. Default: `false`. |
-| `revalidate`             | Whether fields should be re-validated automatically. Valid values: `oninput` (validate after a field changes), `onsubmit` (validate when the form should be submitted), and `never`. Default: `oninput`. |
-| `valid_event`            | Whether the non-standard `valid` event should be triggered. Default: `true`. |
-| `extend_fieldset`        | Whether the `<fieldset>` element should be treated like a normal input field, e.g. allowing it to receive an error message. Default: `true`. |
-| `novalidate_on_elements` | Whether input fields with the non-standard attribute `novalidate` should be exempted from validation. Default: `true`. |
-| `classes`                | CSS class names to use instead of the default ones. This is an object with the possible keys `warning`, `valid`, `invalid`, and `validated`. |
+*   `strict`: (*bool*) When `true`, disable the high-level API. Default:
+    `false`.
+*   `revalidate`: (*string*) Whether and when fields should be re-validated
+    automatically. Valid values:
+
+    *   `oninput` validate after a field changes
+    *   `onblur` validate after a field is left
+    *   `hybrid` an intelligent mixed approach: report valid value on input,
+        but complain about invalid value on blur
+    *   `onsubmit` validate when the form should be submitted
+    *   `never`: never revalidates on its own
+    Default: `hybrid`.
+*   `valid_event`: (*bool*) Whether the non-standard `valid` event should be
+    triggered. Default: `true`.
+*   `extend_fieldset`: (*bool*) Whether the `<fieldset>` element should be
+    treated like a normal input field, e.g. allowing it to receive an error
+    message. Default: `true`.
+*   `novalidate_on_elements`: (*bool*) Whether input fields with the
+    non-standard attribute `novalidate` should be exempted from validation.
+    Default: `true`.
+*   `classes`: (*object*) CSS class names to use instead of the default ones.
+    This is an object with the possible keys:
+
+    *   `warning`: the node created to show a validation warning. Default:
+        `hf-warning`.
+    *   `valid`: a valid element, like the `:valid` pseudo-class. Default:
+        `hf-valid`.
+    *   `invalid`: an invalid element, like the `:invalid` pseudo-class.
+        Default: `hf-invalid`.
+    *   `validated`: an element that was validated at least once. Allows to
+        address invalid input only _after_ the user has first touched them.
 
 ----
 
