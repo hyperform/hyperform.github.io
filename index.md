@@ -22,7 +22,18 @@ eases your validation task with custom events and hooks.
   </a>
 </div>
 
-## License
+Hyperform is neatly packed in a single Javascript file and weights only 27kB
+(7.8kB gzipped!) and includes:
 
-This library is released under the terms of the [MIT
-license](LICENSE.html).
+*   a **full, working and compliant implementation** of the whole [HTML 5
+    constraint
+    API](https://html.spec.whatwg.org/multipage/forms.html#the-constraint-validation-api)
+*   polyfills for **other useful methods** like
+    [`valueAsNumber`](https://html.spec.whatwg.org/multipage/forms.html#dom-input-valueasnumber)
+    or
+    [`stepUp`](https://html.spec.whatwg.org/multipage/forms.html#dom-input-stepup)
+*   **new events**
+*   easily **customizable error messages**
+*   fine-grained **control over the display** of messages
+*   and all this licensed under the terms of the [**MIT
+    license**](LICENSE.html)
