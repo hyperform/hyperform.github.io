@@ -1,6 +1,7 @@
 ---
 title: Documentation
 id: docs
+game: browserquest
 ---
 ## Welcome to Hyperform’s documentation!
 

@@ -1,6 +1,7 @@
 ---
 title: Using Hyperform’s Validation Enhancements
 id: docs-usage-high
+game: hextris
 ---
 
 ## React to Validation Results in CSS

@@ -1,6 +1,7 @@
 ---
 title: Usage
 id: docs-usage
+game: untrusted
 ---
 
 The library introduces the global variable `hyperform`. You can let Hyperform

@@ -1,6 +1,7 @@
 ---
 title: Installation
 id: docs-install
+game: arcade
 ---
 The easiest way is installing via `npm`:
 

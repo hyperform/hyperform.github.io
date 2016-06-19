@@ -3,8 +3,37 @@
     <p>Hyperform is brought to you by <a
     href="http://www.kinetiqa.de">Kinetiqa</a> – web technology made in
     Germany.</p>
-    <p>Disappointed, that this isn’t an actual arcade-like browser game? We
-    suggest <a href="http://zty.pe/">Z-Type</a>. Also great, if you want to
-    learn touch-typing!</p>
+    <p>Disappointed, that this isn’t an actual arcade-like browser game?
+    {% case page.game %}
+    {% when 'pirateslovedaisies' %}
+      How about pirates that defend their dear flowers? <a
+      href="http://www.pirateslovedaisies.com/">Pirates Love Daisies</a> by
+      Microsoft.
+    {% when 'browserquest' %}
+      Become a legendary hero with Mozilla’s <a
+      href="http://browserquest.mozilla.org/">BrowserQuest</a>.
+    {% when 'hextris' %}
+      <a href="http://hextris.io/">Hextris</a> takes a new look at the good
+      old Tetris.
+    {% when 'arcade' %}
+      If you’re nostalgic why not losing your time in the <a
+      href="https://archive.org/details/internetarcade">Internet Arcade</a> of
+      the Internet Archive?
+    {% when '2048' %}
+      Play a modern classic: <a
+      href="https://gabrielecirulli.github.io/2048/">2048</a> by Gabriele
+      Cirulli.
+    {% when 'untrusted' %}
+      Fans of the console will be immediately familiar with <a
+      href="http://alexnisnevich.github.io/untrusted/">Untrusted</a>, a
+      meta-JavaScript adventure game by Alex Nisnevich and Greg Shuflin.
+    {% when 'adarkroom' %}
+      Play a city-building strategy game with a truly minimal UI, <a
+      href="http://adarkroom.doublespeakgames.com/">A Dark Room</a>.
+    {% else %}
+      We suggest <a href="http://zty.pe/">Z-Type</a>. Also great, if you want
+      to learn touch-typing!
+    {% endcase %}
+    </p>
   </section>
 </footer>

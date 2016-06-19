@@ -1,6 +1,7 @@
 ---
 title: Working with the HTML 5 Validation API
 id: docs-usage-low
+game: 2048
 ---
 The [HTML 5 validation
 API](https://html.spec.whatwg.org/multipage/forms.html#the-constraint-validation-api)
