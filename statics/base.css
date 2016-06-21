@@ -23,6 +23,7 @@ p {
   margin: 0;
 }
 
+li + li,
 p + p {
   margin-top: .75em;
 }
@@ -196,12 +197,13 @@ tbody > tr:nth-child(2n) > td {
 
 
 .nav__item {
-  padding-left: 0;
   background: none;
+  padding-left: 0;
 }
 
 .nav__item + .nav__item {
   margin-left: 1em;
+  margin-top: 0;
 }
 
 .nav--vertical .nav__item + .nav__item {

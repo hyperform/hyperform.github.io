@@ -107,22 +107,25 @@ var element_is_valid = element.validity.valid;
 // or equivalent (but triggers the "invalid" event):
 var element_is_valid = element.checkValidity();
 
-// show a warning to the user, if the element is invalid:
-if (! element_is_valid) {
-  element.reportValidity();
-}
+// show a warning to the user, if the element is invalid (or remove said
+// warning again if valid):
+element.reportValidity();
 ```
 
 ## Switching off the validation
 
 When a form has an attribute `novalidate`, the browser will skip validation
-altogether for this form. You can control this feature in your scripts by
+altogether for this form. You can control this feature in your code by
 toggling `form.noValidate` (with upper-case “V”).
 
 ```js
 form.noValidate = true;
 // validation is switched off for this form
 ```
+
+This is an all-or-nothing property, and you cannot control single input fields
+apart from setting them in the `disabled` state. (Read on to learn about
+Hyperform’s solution to this.)
 
 
 ## Things, that do not work well with the HTML 5 API
@@ -139,14 +142,21 @@ are not solvable with the methods above alone, include:
     disable the validation for the whole form and reimplement everything
     yourself.
 
+    (Why would you want to do this? Think of entering credit card numbers.
+    The field should have a maximum input length of 19 digits. But good
+    usability dictates, that we should allow users to paste numbers with
+    spaces, dashes or trailing punctuation and sanitize the value as long a
+    possible. This is not possible with a strict validation, that comes with
+    `<input type="text" name="cc" pattern="[0-9]{8,19}" maxlength="19">`.)
+
     _Hyperform_ respects a non-standard attribute `novalidate` on a per
     element base, so you can remove single input fields from the validation
     step.
 
 *   When a user tries to submit a form, the browser will run the validation
     _before_ the `submit` event is fired. This is unfortunate, since there is
-    no option to hook custom behavior into this step (like calling custom
-    validation routines).
+    no option to hook custom behavior into this step like calling custom
+    and possibly costly validation routines on submit.
 
     _Hyperform_ allows to register custom validator functions that are called
     during validation. It also triggers a cancellable `validate` event on the
