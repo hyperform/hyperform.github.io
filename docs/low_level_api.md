@@ -29,15 +29,15 @@ orient="auto">
 <line x1="40" y1="320" x2="60" y2="320"/>
 <line x1="40" y1="420" x2="60" y2="420"/>
 <line x1="40" y1="520" x2="60" y2="520"/>
-<path d="M 380,400 A 1200,400 0 0,0 380,140" marker-end="url(#Triangle)"/>
+<path d="M 380,400 A 1200,400 0 0,0 380,240" marker-end="url(#Triangle)"/>
 </g>
 <text font-size="20" font-family="Work Sans,sans-serif" fill="#262422">
-<tspan x="70" y="125">user fills input field</tspan>
+<tspan x="70" y="225">user fills input field</tspan>
 <tspan x="70" y="325">user tries to submit the form</tspan>
 <tspan x="70" y="25">page load</tspan>
-<tspan x="70" y="225"><tspan font-family="monospace">:valid</tspan> and <tspan font-family="monospace">:invalid</tspan> match</tspan>
+<tspan x="70" y="125"><tspan font-family="monospace">:valid</tspan> and <tspan font-family="monospace">:invalid</tspan> match immediately</tspan>
 <tspan x="70" y="425">errors are reported to the user</tspan>
-<tspan x="70" y="525">without errors the form is submitted</tspan>
+<tspan x="70" y="525">form is submitted only without errors</tspan>
 </text>
 </svg>
 
