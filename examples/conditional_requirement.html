@@ -21,7 +21,7 @@ layout: example
 
 <script>
 /* register a custom validator for the text field */
-hyperform.register(
+hyperform.add_validator(
   document.getElementById('textfield'),
   function (element) {
     var valid = ! document.getElementById('checkbox').checked ||

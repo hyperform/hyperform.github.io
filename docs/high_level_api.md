@@ -118,7 +118,7 @@ Define your own validators per input element, that are called automatically in
 the `validity.customError` step:
 
 ```js
-hyperform.register(element, function(element) {
+hyperform.add_validator(element, function(element) {
   var valid = result_of_convoluted_validation_routine();
   // now is a good time to set error messages:
   element.setCustomValidity(valid? '' :
