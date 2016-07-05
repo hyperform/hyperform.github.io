@@ -1,6 +1,11 @@
 {% if page.id == 'examples' %}
   <script src="statics/hyperform.min.js"></script>
   <script>
+if (! window.fetch) {
+  document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"><'+'/script>');
+}
+</script>
+  <script>
 var gi_hyp;
 
 function show(example) {
