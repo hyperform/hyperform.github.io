@@ -112,7 +112,7 @@ hyperform.set_message(element, 'valueMissing',
                       'Shugs! You need to fill in this form');
 ```
 
-## Other Features
+## Define Custom Validators
 
 Define your own validators per input element, that are called automatically in
 the `validity.customError` step:
@@ -130,14 +130,29 @@ element.validity.customError? 'the script returned false' :
                               'the script returned true';
 ```
 
+## Exclude a Single `<input>` from Validation
+
 You can take single `<input>` elements out of validation by setting a
-non-standard `novalidate` attribute or setting the `noValidate` property to
-`true`:
+non-standard `novalidate` attribute in the HTML or setting the `noValidate`
+property in your JS code to `true`:
 
 ```js
 var element = document.querySelector('input[name="foo"]');
 element.noValidate = true;
 // done. element won't be validated.
+```
+
+## Prevent Implicit Submits
+
+An [implicit
+submit](https://www.w3.org/TR/html5/forms.html#implicit-submission) occurs,
+when a user presses `Enter` in a single-line input field. Sometimes this
+behaviour is not wanted. You can disable it globally with a setting:
+
+```js
+hyperform(window, {
+  prevent_implicit_submit: true
+});
 ```
 
 ----

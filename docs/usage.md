@@ -52,6 +52,8 @@ The available settings are:
 
 *   `strict`: (*bool*) When `true`, disable the high-level API. Default:
     `false`.
+*   `prevent_implicit_submit`: (*bool*) Prevent `Enter` in input fields to
+    submit the form. Default: `false`.
 *   `revalidate`: (*string*) Whether and when fields should be re-validated
     automatically. Valid values:
 
