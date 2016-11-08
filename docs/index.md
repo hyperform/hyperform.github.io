@@ -12,9 +12,8 @@ Hyperform is a pure JS implementation of the HTML 5 form validation API.
 Add Hyperform to your HTML page:
 
 ```html
-<script src="https://cdn.rawgit.com/hyperform/hyperform/master/dist/hyperform.min.js"></script>
-<link rel="stylesheet" href="https://cdn.rawgit.com/hyperform/hyperform/master/css/hyperform.css">
-<!-- please load the files from somewhere else in production. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.10/hyperform.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.10/hyperform.css">
 ```
 
 Use Hyperform in your Javascript:
