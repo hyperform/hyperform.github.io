@@ -1,0 +1,39 @@
+---
+layout: example
+description: >
+  <p>Sometimes you want to intercept forms with Javascript to send them to the
+  server via AJAX. But when the submit button contains a
+  <code>name</code>/<code>value</code> pair, you’ve got a problem. That info
+  is lost from the data, that you want to send to the server, and it is
+  <a href="">quite cumbersome</a> to reliably get it back.</p>
+  <p>But despair not! Hyperform comes to the rescue. When you catch the
+  <code>submit</code> event, it will now have a new property
+  <code>submittedVia</code>. This is the element, that triggered the submit,
+  in most cases the submit button.</p>
+  <hr>
+---
+<form id="button_name">
+  <p>
+    <button name="foo" value="bar">Send <code>foo=bar</code></button>
+    <button name="foo" value="quux">Send <code>foo=quux</code></button>
+  </p>
+</form>
+
+<script>
+hyperform(window);
+
+document.getElementById('button_name')
+  .addEventListener('submit', function(event) {
+    /* do not submit the form, because we'll do that later */
+    event.preventDefault();
+    event.stopPropagation();
+
+    alert('Will submit ' + event.submittedVia.name +
+          '=' + event.submittedVia.value);
+
+    /* now you can construct your AJAX data easily,
+     * e.g. with the FormData API: */
+    var data = new FormData(event.target);
+    data.append(event.submittedVia.name, event.submittedVia.value);
+  });
+</script>
