@@ -1,13 +1,71 @@
 {% if page.id == 'examples' %}
-  <script src="statics/hyperform.min.js"></script>
+  <script src="https://unpkg.com/loadjs@3.3.1/dist/loadjs.min.js"></script>
   <script>
-if (! window.fetch) {
-  document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.2/es6-promise.min.js"><'+'/script>');
-  document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js"><'+'/script>');
+var pkg = [];
+if (! window.WeakMap) {
+  pkg.push('https://unpkg.com/weakmap@0.0.6/weakmap.min.js');
 }
-</script>
-  <script>
+if (! window.fetch) {
+  pkg.push('https://cdnjs.cloudflare.com/ajax/libs/es6-promise/3.2.2/es6-promise.min.js');
+  pkg.push('https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js');
+}
+if (! document.body.classList) {
+  pkg.push('https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20150312/classList.min.js');
+}
+if (pkg.length) {
+  loadjs(pkg, {
+    success: function() {
+      loadjs('statics/hyperform.min.js', {
+        success: run
+      });
+    }
+  });
+} else {
+  loadjs('statics/hyperform.min.js', {
+    success: run
+  });
+}
+
 var gi_hyp;
+
+function run() {
+  if (document.location.hash.search(/#file=/) === 0) {
+    var example = decodeURIComponent(document.location.hash.substr(6));
+    if (/^[a-z_]+$/.test(example)) {
+      show('examples/'+example+'.html');
+      document.querySelector('a[href="examples/'+example+'.html"]').parentNode.classList.add('active');
+    }
+  }
+
+  document.addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert('Congratulations! The form can be submitted successfully.');
+  });
+
+  document.getElementById('nav').addEventListener('click', function(event) {
+    var node = event.target;
+    if (node.nodeName !== 'A') {
+      if (node.parentNode.nodeName === 'A') {
+        node = node.parentNode;
+      } else {
+        return;
+      }
+    }
+
+    event.preventDefault();
+    var hash = node.href.replace(/.*examples\/([a-z_]+)\.html/, '$1');
+    if (/^[a-z_]+$/.test(hash)) {
+      document.location.hash = '#file='+hash;
+    }
+    show(node.href);
+    Array.prototype.map.call(
+      document.getElementById('nav').querySelectorAll('.active'),
+      function (item) {
+        item.classList.remove('active');
+      });
+    node.parentNode.classList.add('active');
+  });
+}
 
 function show(example) {
   document.body.classList.add('loading');
@@ -35,41 +93,5 @@ function show(example) {
     });
 }
 
-if (document.location.hash.search(/#file=/) === 0) {
-  var example = decodeURIComponent(document.location.hash.substr(6));
-  if (/^[a-z_]+$/.test(example)) {
-    show('examples/'+example+'.html');
-    document.querySelector('a[href="examples/'+example+'.html"]').parentNode.classList.add('active');
-  }
-}
-
-document.addEventListener('submit', function(event) {
-  event.preventDefault();
-  alert('Congratulations! The form can be submitted successfully.');
-});
-
-document.getElementById('nav').addEventListener('click', function(event) {
-  var node = event.target;
-  if (node.nodeName !== 'A') {
-    if (node.parentNode.nodeName === 'A') {
-      node = node.parentNode;
-    } else {
-      return;
-    }
-  }
-
-  event.preventDefault();
-  var hash = node.href.replace(/.*examples\/([a-z_]+)\.html/, '$1');
-  if (/^[a-z_]+$/.test(hash)) {
-    document.location.hash = '#file='+hash;
-  }
-  show(node.href);
-  Array.prototype.map.call(
-    document.getElementById('nav').querySelectorAll('.active'),
-    function (item) {
-      item.classList.remove('active');
-    });
-  node.parentNode.classList.add('active');
-});
   </script>
 {% endif %}
