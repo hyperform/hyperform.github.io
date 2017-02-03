@@ -22,18 +22,47 @@ eases your validation task with custom events and hooks.
   </a>
 </div>
 
-Hyperform is neatly packed in a single Javascript file and weights only 27kB
-(7.8kB gzipped!) and includes:
+Hyperform is neatly packed in a single Javascript file and weights only 31kB
+(8.9kB gzipped!) and includes:
 
 *   a **full, working and compliant implementation** of the whole [HTML 5
     constraint
     API](https://html.spec.whatwg.org/multipage/forms.html#the-constraint-validation-api)
-*   polyfills for **other useful methods** like
+
+    ```js
+    assert(input.validity.valid);
+    ```
+*   polyfills _and_ [ponyfills](https://ponyfill.com) for **other useful methods** like
     [`valueAsNumber`](https://html.spec.whatwg.org/multipage/forms.html#dom-input-valueasnumber)
     or
     [`stepUp`](https://html.spec.whatwg.org/multipage/forms.html#dom-input-stepup)
+
+    ```js
+    // polyfill:
+    assert(input.valueAsNumber === 123);
+
+    // ponyfill:
+    hyperform.stepUp(input); // instead of input.stepUp()
+    ```
 *   **new events**
+
+    ```js
+    form.addEventListener('validate', function(event) {
+      // stop the engines!
+      event.preventDefault();
+    });
+    ```
 *   easily **customizable error messages**
+
+    ```html
+    <input required data-value-missing="No chance! Fill it already.">
+    ```
 *   fine-grained **control over the display** of messages
+
+    ```css
+    .hf_warning {
+      border-color: pink;
+    }
+    ```
 *   and all this licensed under the terms of the [**MIT
     license**](LICENSE.html)
