@@ -69,16 +69,16 @@ form.addEventListener('validate', event => {
 You can translate all validation messages and also set the language used. We
 have [some partial translations](https://github.com/hyperform/hyperform-l10n)
 ready, that are based on Firefox’s messages. The interface for this consists
-of two methods, `hyperform.set_language()` and `hyperform.add_translation()`.
+of two methods, `hyperform.setLanguage()` and `hyperform.addTranslation()`.
 
 ```js
-hyperform.add_translation("de", {
+hyperform.addTranslation("de", {
   TextTooLong: "Bitte kürzen Sie diesen Text auf maximal %l Zeichen (Sie verwenden derzeit %l Zeichen).",
   ValueMissing: "Bitte füllen Sie dieses Feld aus.",
   // ...
 });
 
-hyperform.set_language("de");
+hyperform.setLanguage("de");
 ```
 
 
@@ -104,12 +104,12 @@ validation error that the message describes:
 | `data-value-missing`    | the value is required, but missing |
 
 If you want to adapt the messages of an element in code, you can do so with the
-`hyperform.set_message()` method. It expects an element, the type of validator
+`hyperform.setMessage()` method. It expects an element, the type of validator
 and the message in case the validation goes wrong:
 
 ```js
-hyperform.set_message(element, 'valueMissing',
-                      'Shugs! You need to fill in this form');
+hyperform.setMessage(element, 'valueMissing',
+                     'Shugs! You need to fill in this form');
 ```
 
 ## Define Custom Validators
@@ -118,7 +118,7 @@ Define your own validators per input element, that are called automatically in
 the `validity.customError` step:
 
 ```js
-hyperform.add_validator(element, function(element) {
+hyperform.addValidator(element, function(element) {
   var valid = result_of_convoluted_validation_routine();
   // now is a good time to set error messages:
   element.setCustomValidity(valid? '' :
@@ -151,7 +151,7 @@ behaviour is not wanted. You can disable it globally with a setting:
 
 ```js
 hyperform(window, {
-  prevent_implicit_submit: true
+  preventImplicitSubmit: true
 });
 ```
 

@@ -82,8 +82,8 @@ function show(example) {
       if (gi_hyp && 'destroy' in gi_hyp) {
         gi_hyp.destroy();
       }
-      hyperform.set_language('en');
-      hyperform.set_renderer('attach_warning');
+      hyperform.setLanguage('en');
+      hyperform.setRenderer('attach_warning');
 
       var scripts = document.getElementById('stage').getElementsByTagName('script');
       for (var i = 0; i < scripts.length; i++) {

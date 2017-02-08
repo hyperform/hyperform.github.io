@@ -44,7 +44,7 @@ Configure settings as second argument:
 ```js
 hyperform(window, {
   revalidate: 'onsubmit',
-  valid_event: false,
+  validEvent: false,
 });
 ```
 
@@ -52,7 +52,7 @@ The available settings are:
 
 *   `strict`: (*bool*) When `true`, disable the high-level API. Default:
     `false`.
-*   `prevent_implicit_submit`: (*bool*) Prevent `Enter` in input fields to
+*   `preventImplicitSubmit`: (*bool*) Prevent `Enter` in input fields to
     submit the form. Default: `false`.
 *   `revalidate`: (*string*) Whether and when fields should be re-validated
     automatically. Valid values:
@@ -64,12 +64,12 @@ The available settings are:
     *   `onsubmit` validate when the form should be submitted
     *   `never`: never revalidates on its own
     Default: `hybrid`.
-*   `valid_event`: (*bool*) Whether the non-standard `valid` event should be
+*   `validEvent`: (*bool*) Whether the non-standard `valid` event should be
     triggered. Default: `true`.
-*   `extend_fieldset`: (*bool*) Whether the `<fieldset>` element should be
+*   `extendFieldset`: (*bool*) Whether the `<fieldset>` element should be
     treated like a normal input field, e.g. allowing it to receive an error
     message. Default: `true`.
-*   `novalidate_on_elements`: (*bool*) Whether input fields with the
+*   `novalidateOnElements`: (*bool*) Whether input fields with the
     non-standard attribute `novalidate` should be exempted from validation.
     Default: `true`.
 *   `classes`: (*object*) CSS class names to use instead of the default ones.
