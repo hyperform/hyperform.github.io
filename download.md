@@ -1,6 +1,7 @@
 ---
 title: Download Hyperform
 game: freeciv
+id: download
 ---
 
 ## Zip File

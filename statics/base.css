@@ -237,6 +237,10 @@ tbody > tr:nth-child(2n) > td {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d6.png);
 }
 
+.nav__link.download {
+  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/2198.png);
+}
+
 .nav__link.active {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f680.png);
   color: inherit;
