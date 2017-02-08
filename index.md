@@ -8,6 +8,10 @@ in Javascript. It replaces or polyfills the browser’s native methods and
 eases your validation task with custom events and hooks.
 
 <div class="max">
+  <a class="max__l" href="download.html">
+    <img src="https://assets-cdn.github.com/images/icons/emoji/unicode/2198.png" alt="" class="max__i">
+    <span class="max__t">Download</span>
+  </a>
   <a class="max__l" href="examples.html">
     <img src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f527.png" alt="" class="max__i">
     <span class="max__t">Examples</span>
