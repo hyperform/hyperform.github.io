@@ -255,22 +255,24 @@ tbody > tr:nth-child(2n) > td {
 }
 
 .max__l {
-  display: block;
-  margin: 10px;
+  background: linear-gradient(to bottom, #fff, #cfbed1);
   border: 1px solid #78397E;
   border-radius: 1px;
-  padding: 10px;
-  text-align: center;
+  display: block;
   flex-basis: 0;
   flex-grow: 1;
-  min-width: 10em;
+  margin: 10px;
+  min-width: 5em;
+  padding: 10px;
+  text-align: center;
+  text-shadow: 1px 1px rgba(255,255,255,.75);
 }
 
 .max__l:focus,
 .max__l:hover {
   border-color: #66246C;
-  box-shadow: inset 0 -10px 5px -5px #78397E;
-  box-shadow: 0 0 15px 1px #FFFEC5;
+  box-shadow: 0 0 15px 1px #FFFEC5,
+              inset 0 -3px 3px -2px #78397E;
 }
 
 .max__i {

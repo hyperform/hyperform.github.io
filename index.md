@@ -1,7 +1,7 @@
 ---
 id: home
+title: Capture form validation back from the browser
 ---
-## Capture form validation back from the browser
 
 Hyperform is a complete implementation of the **HTML 5 form validation API**
 in Javascript. It replaces or polyfills the browser’s native methods and
