@@ -28,7 +28,7 @@ layout: example
 var container = document.getElementById('errors');
 
 /* change Hyperform's renderer to write into the global error div */
-hyperform.setRenderer('attach_warning', function(warning, element) {
+hyperform.setRenderer('attachWarning', function(warning, element) {
   if (element.labels && element.labels.length) {
     /* add the label's text, if we have one (only Chrome at the moment) */
     warning.insertAdjacentText('afterbegin', element.labels[0].textContent);
