@@ -29,6 +29,7 @@ Then embed `dist/hyperform.min.js` in your file:
 
 ```html
 <script src="path/to/hyperform/dist/hyperform.min.js"></script>
+<script>hyperform(window);</script>
 ```
 
 For Hyperform to work in old IEs you need polyfills for
