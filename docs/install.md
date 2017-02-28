@@ -48,6 +48,23 @@ the `src` folder:
 import hyperform from 'path/to/hyperform/src/hyperform';
 ```
 
+## Auto-Loading Hyperform
+
+There might be situations, where you just want to throw in the Hyperform
+`script` element, let it do its magic and call it a day. To spare the call to
+`hyperform(window)` you can simply add a special attribute to the embedding
+script element:
+
+```js
+<script src="path/to/hyperform.min.js" data-hf-autoload></script>
+```
+
+This will then automatically run `hyperform(window)` for you. (Note: If you're
+supporting IE, then you must add a [polyfill for
+`document.currentScript`](https://github.com/JamesMGreene/document.currentScript)
+for this feature to work. If you don’t want that, simply call
+`hyperform(window)` yourself somewhere in your code.)
+
 ----
 
 :gem: Next: [Usage](usage.html) – all the things you can do with Hyperform
