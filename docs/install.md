@@ -55,7 +55,7 @@ There might be situations, where you just want to throw in the Hyperform
 `hyperform(window)` you can simply add a special attribute to the embedding
 script element:
 
-```js
+```html
 <script src="path/to/hyperform.min.js" data-hf-autoload></script>
 ```
 
