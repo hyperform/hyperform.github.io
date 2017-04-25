@@ -70,3 +70,10 @@ For IE 9 and IE 10 you need two polyfills:
 
 * a `WeakMap` implementation. We suggest [this one](https://github.com/Benvie/WeakMap) ([download](https://unpkg.com/weakmap@0.0.6/weakmap.min.js))
 * a `classList` polyfill like [this one](http://purl.eligrey.com/github/classList.js) ([download](https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20150312/classList.min.js))
+
+[Polyfill.io](https://polyfill.io/) offers this as conveniant URL, that only
+returns the necessary polyfills based on the browser UA string:
+
+```html
+<script src="https://polyfill.io/v2/polyfill.min.js?features=Element.prototype.classList,WeakMap"></script>
+```

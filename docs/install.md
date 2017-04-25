@@ -36,6 +36,13 @@ For Hyperform to work in old IEs you need polyfills for
 [`WeakMap`](https://github.com/Benvie/WeakMap) (IE 10 and lower), and
 [`element.classList`](https://github.com/remy/polyfills) (IE 9 and lower).
 
+[Polyfill.io](https://polyfill.io/) offers this as conveniant URL, that only
+returns the necessary polyfills based on the browser UA string:
+
+```html
+<script src="https://polyfill.io/v2/polyfill.min.js?features=Element.prototype.classList,WeakMap"></script>
+```
+
 Finished! Yes, in modern browsers Hyperform has **zero** external
 dependencies.
 
