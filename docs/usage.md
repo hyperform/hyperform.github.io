@@ -83,6 +83,9 @@ The available settings are:
         Default: `hf-invalid`.
     *   `validated`: an element that was validated at least once. Allows to
         address invalid input only _after_ the user has first touched them.
+*   `validateNameless`: (*bool*) Whether to include input elements without
+    `name` attribute as validation candidates.
+    Default: `false`. Since 0.9.11.
 
 ----
 
