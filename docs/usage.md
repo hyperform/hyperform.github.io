@@ -33,7 +33,7 @@ the global `hyperform` object:
 
 ```js
 if (hyperform.willValidate(form.elements[0])) {
-  var is_valid = hyperform.validityState(form.elements[0]).valid;
+  var is_valid = hyperform.ValidityState(form.elements[0]).valid;
 }
 ```
 

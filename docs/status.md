@@ -11,17 +11,17 @@ for prime time?
 | ---------------------------- | ----------- | ------------------ |
 | `willValidate`               | :full_moon: | |
 | `setCustomValidity(message)` | :full_moon: | |
-| `validity.valueMissing`      | :full_moon: | (access via `hyperform.validityState`) |
-| `validity.typeMismatch`      | :full_moon: | (access via `hyperform.validityState`) |
-| `validity.patternMismatch`   | :full_moon: | (access via `hyperform.validityState`) |
-| `validity.tooLong`           | :full_moon: | (access via `hyperform.validityState`) |
-| `validity.tooShort`          | :full_moon: | (access via `hyperform.validityState`) |
-| `validity.rangeUnderflow`    | :full_moon: | (access via `hyperform.validityState`) |
-| `validity.rangeOverflow`     | :full_moon: | (access via `hyperform.validityState`) |
-| `validity.stepMismatch`      | :full_moon: | (access via `hyperform.validityState`) |
-| `validity.badInput`          | :full_moon: | (access via `hyperform.validityState`) |
-| `validity.customError`       | :full_moon: | (access via `hyperform.validityState`) |
-| `validity.valid`             | :full_moon: | (access via `hyperform.validityState`) |
+| `validity.valueMissing`      | :full_moon: | (access via `hyperform.ValidityState`) |
+| `validity.typeMismatch`      | :full_moon: | (access via `hyperform.ValidityState`) |
+| `validity.patternMismatch`   | :full_moon: | (access via `hyperform.ValidityState`) |
+| `validity.tooLong`           | :full_moon: | (access via `hyperform.ValidityState`) |
+| `validity.tooShort`          | :full_moon: | (access via `hyperform.ValidityState`) |
+| `validity.rangeUnderflow`    | :full_moon: | (access via `hyperform.ValidityState`) |
+| `validity.rangeOverflow`     | :full_moon: | (access via `hyperform.ValidityState`) |
+| `validity.stepMismatch`      | :full_moon: | (access via `hyperform.ValidityState`) |
+| `validity.badInput`          | :full_moon: | (access via `hyperform.ValidityState`) |
+| `validity.customError`       | :full_moon: | (access via `hyperform.ValidityState`) |
+| `validity.valid`             | :full_moon: | (access via `hyperform.ValidityState`) |
 | `checkValidity()`            | :full_moon: | |
 | `reportValidity()`           | :full_moon: | |
 | `validationMessage`          | :full_moon: | |
