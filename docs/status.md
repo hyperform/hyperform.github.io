@@ -5,7 +5,7 @@ game: adarkroom
 ---
 What parts of the [HTML5 validation
 API](https://html.spec.whatwg.org/multipage/forms.html#constraints) are ready
-for prime time?
+for prime time? (:full_moon:: finished, :new_moon:: work-in-progress)
 
 | feature                      | status      | comment            |
 | ---------------------------- | ----------- | ------------------ |

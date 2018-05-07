@@ -11,7 +11,7 @@ Download the whole project as Zip file:
 <a class="arcade-btn" href="https://github.com/hyperform/hyperform/archive/master.zip">Press Button for Download</a>
 
 In this archive you will find the files `dist/hyperform.min.js` and
-`css/hyperform.css`. Simply include them in your project, and you’re ready to
+`css/hyperform.css`. Include them in your project, and you’re ready to
 go:
 
 ```html
@@ -22,24 +22,28 @@ go:
 
 ## Install via Package Managers
 
-The easiest way is installing via `npm`:
+Hyperform is available from a package manager near you:
 
 ```sh
+# npm
 $ npm install hyperform
+# yarn
+$ yarn add hyperform
+# bower
+$ bower install hyperform
 ```
 
-or you can use Bower:
+These installations provide you with the same files as the direct download
+above.
 
-```sh
-bower install hyperform
-```
-
-Both methods provide you with the same files as the direct download above.
-
-If you use a build system like Browserify or Webpack, simply require Hyperform
-there:
+If you use a build system like Browserify or Webpack, require Hyperform
+in your own Javascript files:
 
 ```js
+// "classic" CJS variant:
+var hyperform = require('hyperform');
+
+// or "newer" ESM variant:
 import hyperform from 'hyperform';
 
 hyperform(window);

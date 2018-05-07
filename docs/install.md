@@ -3,33 +3,28 @@ title: Installation
 id: docs-install
 game: arcade
 ---
-The easiest way is installing via `npm`:
 
-```sh
-npm install hyperform
-```
-
-Then require Hyperform in your code:
-
-```js
-var hyperform = require('hyperform');
-hyperform(window);
-```
-
-If you do not use Node.js, you can install Hyperform with **Bower**,
-
-```sh
-bower install hyperform
-```
-
-or simply download the [current version as ZIP
-archive](https://github.com/hyperform/hyperform/archive/master.zip).
+Fetch Hyperform in any way you like as laid out on the [downloads page](/download.html).
 
 Then embed `dist/hyperform.min.js` in your file:
 
 ```html
-<script src="path/to/hyperform/dist/hyperform.min.js"></script>
+<script src="hyperform/dist/hyperform.min.js"></script>
+<link rel="stylesheet" href="hyperform/css/hyperform.css">
 <script>hyperform(window);</script>
+```
+
+If you use a build system like Browserify or Webpack, require Hyperform
+in your own Javascript files:
+
+```js
+// "classic" CJS variant:
+var hyperform = require('hyperform');
+
+// or "newer" ESM variant:
+import hyperform from 'hyperform';
+
+hyperform(window);
 ```
 
 For Hyperform to work in old IEs you need polyfills for
