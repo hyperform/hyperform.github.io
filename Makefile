@@ -1,5 +1,16 @@
 all:
 	jekyll build --quiet
+.PHONY: all
+
+update:
+	npm upgrade hyperform
+	sed -i 's/^hf_version:.*/hf_version: "'"$$(cat node_modules/hyperform/src/version.js|sed -n '$$s/[^0-9.]//g p')"'"/' _config.yml
+	sed -i 's/^filesize_plain:.*/filesize_plain: "'"$$(du -k node_modules/hyperform/dist/hyperform.min.js|awk '{print $$1}')"'"/' _config.yml
+	sed -i 's/^filesize_gzipped:.*/filesize_gzipped: "'"$$(gzip -c node_modules/hyperform/dist/hyperform.min.js | wc -c | sed 's/\(...\)$$/.\1/' |LANG=C xargs printf %.1f)"'"/' _config.yml
+	cp node_modules/hyperform/dist/hyperform.min.js statics/hyperform.min.js
+	cp node_modules/hyperform/css/hyperform.css statics/hyperform.css
+	$(MAKE) all
+.PHONY: update
 
 icons: src/icon.16.png
 	@echo "* generate icons"

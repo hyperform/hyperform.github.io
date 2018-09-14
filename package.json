@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/hyperform/hyperform.github.io/issues"
   },
-  "homepage": "https://github.com/hyperform/hyperform.github.io#readme"
+  "dependencies": {
+    "hyperform": "*"
+  },
+  "homepage": "https://hyperform.js.org"
 }
