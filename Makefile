@@ -9,6 +9,7 @@ update:
 	sed -i 's/^filesize_gzipped:.*/filesize_gzipped: "'"$$(gzip -c node_modules/hyperform/dist/hyperform.min.js | wc -c | sed 's/\(...\)$$/.\1/' |LANG=C xargs printf %.1f)"'"/' _config.yml
 	cp node_modules/hyperform/dist/hyperform.min.js statics/hyperform.min.js
 	cp node_modules/hyperform/css/hyperform.css statics/hyperform.css
+	cat node_modules/hyperform/CHANGELOG.md | sed -n '/^## v/,$$p' | sed '1i ---\ntitle: Changelog\n---\n' > CHANGELOG.md
 	$(MAKE) all
 .PHONY: update
 

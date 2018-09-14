@@ -182,10 +182,18 @@ tbody > tr:nth-child(2n) > td {
   }
 }
 
+@media (min-width: 49em) {
+  .page-nav {
+    margin-left: -4em;
+    margin-right: -4em;
+  }
+}
+
 
 .nav__list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav__list .nav__list {
@@ -241,6 +249,10 @@ tbody > tr:nth-child(2n) > td {
 
 .nav__link.download {
   background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/2198.png);
+}
+
+.nav__link.changelog {
+  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f4cb.png);
 }
 
 .nav__link.active {

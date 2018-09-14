@@ -18,7 +18,11 @@ eases your validation task with custom events and hooks.
   </a>
   <a class="max__l" href="docs/">
     <img src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d6.png" alt="" class="max__i">
-    <span class="max__t">Documentation</span>
+    <span class="max__t">Documen&shy;tation</span>
+  </a>
+  <a class="max__l" href="CHANGELOG.html">
+    <img src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4cb.png" alt="" class="max__i">
+    <span class="max__t">Changelog</span>
   </a>
   <a class="max__l" href="https://github.com/hyperform/hyperform/">
     <img src="https://assets-cdn.github.com/images/icons/emoji/octocat.png" alt="" class="max__i">
