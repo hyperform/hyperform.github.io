@@ -26,8 +26,8 @@ eases your validation task with custom events and hooks.
   </a>
 </div>
 
-Hyperform is neatly packed in a single Javascript file, weights only 32kB
-(9.3kB gzipped!) and includes:
+Hyperform is neatly packed in a single Javascript file, weights only {{site.filesize_plain}}kB
+({{site.filesize_gzipped}}kB gzipped!) and includes:
 
 *   a **full, working and compliant implementation** of the whole [HTML 5
     constraint

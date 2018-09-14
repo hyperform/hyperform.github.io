@@ -280,6 +280,7 @@ tbody > tr:nth-child(2n) > td {
 .max__i {
   display: block;
   margin: 0 auto 10px;
+  max-width: 64px;
 }
 
 .arcade-btn.arcade-btn {

@@ -55,8 +55,8 @@ Get up and running quickly with Hyperform by embedding it from a CDN:
 [CDNJS](https://cdnjs.com/libraries/hyperform)
 
 ```html
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.15/hyperform.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hyperform/0.8.15/hyperform.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hyperform/{{site.hf_version}}/hyperform.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hyperform/{{site.hf_version}}/hyperform.min.css">
 ```
 
 or unpkg.com:
