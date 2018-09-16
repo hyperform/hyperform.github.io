@@ -295,6 +295,13 @@ tbody > tr:nth-child(2n) > td {
   max-width: 64px;
 }
 
+.arcade-container {
+  background: #272822;
+  border-radius: .3em;
+  padding: 3em 0;
+  text-align: center;
+}
+
 .arcade-btn.arcade-btn {
     background: #444;
     border: none;
