@@ -2,6 +2,25 @@
 title: Changelog
 ---
 
+## v0.9.20
+
+* hide empty warnings with CSS
+* fix select boxes with disabled options selected validating as required
+
+## v0.9.19
+
+* fix custom validation messages gone missing (regression from v0.9.17)
+
+## v0.9.18
+
+* prevent infinite loops from custom validators
+
+## v0.9.17
+
+* add tests to npm package
+* live-update warnings, when `setCustomValidity()` is called
+* properly delete custom messages
+
 ## v0.9.16
 
 * fix radio button warnings still being multiplied on submit
