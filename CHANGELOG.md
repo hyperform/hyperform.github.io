@@ -2,6 +2,12 @@
 title: Changelog
 ---
 
+## v0.9.22
+
+* fix select boxes not respectin placeholder options
+* validate dates stricter
+* add TypeScript declarations
+
 ## v0.9.21
 
 * fix problem, where badInput was not detected with hyperform(form) calls (issue #49)

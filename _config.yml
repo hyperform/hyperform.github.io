@@ -30,7 +30,7 @@ defaults:
     values:
         layout: "docs"
 
-hf_version: "0.9.21"
+hf_version: "0.9.22"
 filesize_plain: "36"
 filesize_gzipped: "9.5"
 

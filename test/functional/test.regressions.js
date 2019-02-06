@@ -139,25 +139,30 @@ describe('Issue 35', function() {
 
 describe('Issue 41', function() {
 
-  it('should autoload when requested', function(done) {
-    var iframe = document.createElement('iframe');
-    iframe.src = 'blank.html';
-    document.body.appendChild(iframe);
+  /* IE has no document.currentScript, and apparently it can't be polyfilled
+   * in IE 11 anyway. */
+  if (navigator.userAgent.search('Trident') === -1) {
+    it('should autoload when requested', function(done) {
+      var iframe = document.createElement('iframe');
+      iframe.src = 'blank.html';
 
-    once(iframe.contentWindow, 'load', function() {
-      var el = iframe.contentDocument.createElement('script');
-      el.src = '../../statics/hyperform.min.js';
-      el.setAttribute('data-hf-autoload', '');
-      iframe.contentDocument.body.appendChild(el);
-      el.addEventListener('load', function() {
-        if (! iframe.contentWindow.HTMLInputElement.prototype.checkValidity.__hyperform) {
-          throw Error('no original checkValidity method detected');
-        }
-        iframe.parentNode.removeChild(iframe);
-        done();
+      document.body.appendChild(iframe);
+
+      once(iframe.contentWindow, 'load', function() {
+        var el = iframe.contentDocument.createElement('script');
+        el.src = '../../statics/hyperform.min.js';
+        el.setAttribute('data-hf-autoload', '');
+        el.addEventListener('load', function() {
+          if (! iframe.contentWindow.HTMLInputElement.prototype.checkValidity.__hyperform) {
+            throw Error('no original checkValidity method detected');
+          }
+          iframe.parentNode.removeChild(iframe);
+          done();
+        });
+        iframe.contentDocument.body.appendChild(el);
       });
     });
-  });
+  }
 
   it('should not autoload when not requested', function(done) {
     var iframe = document.createElement('iframe');
@@ -245,7 +250,7 @@ describe('Issue 69', function() {
   it('should check, if a required <select> option is not in fact disabled', function() {
     var form = document.createElement('form');
     var select = document.createElement('select');
-    select.innerHTML = '<option selected disabled>select another</option><option>another</option>';
+    select.innerHTML = '<option>another</option><option selected disabled>select another</option>';
     select.required = true;
     form.appendChild(select);
     document.body.appendChild(form);
@@ -288,6 +293,34 @@ describe('Issue 78', function() {
 
     hform.destroy();
     document.body.removeChild(hform.form);
+  });
+
+});
+
+describe('Issue 85', function() {
+
+  it('should fail validation, when the placeholder option is selected', function() {
+    var form = document.createElement('form');
+    var select = document.createElement('select');
+    select.innerHTML = '<option value="">select another</option><option>another</option><option value="">really empty!</option>';
+    select.required = true;
+    form.appendChild(select);
+    document.body.appendChild(form);
+    var hform = hyperform(form);
+
+    if (! select.validity.valueMissing) {
+      throw Error('select has no submittable option selected');
+    }
+    select.options[2].selected = true;
+    if (select.validity.valueMissing) {
+      throw Error('an empty option that is not the placeholder option should be permissible.');
+    }
+    select.options[0].selected = true;
+    if (! select.validity.valueMissing) {
+      throw Error('the placeholder option is not permissible.');
+    }
+
+    destroy_hform(hform);
   });
 
 });
