@@ -67,24 +67,24 @@ ul {
 ul li {
   margin-left: 0;
   padding-left: 22px;
-  background: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f47e.png) no-repeat left 4px;
+  background: url(https://github.githubassets.com/images/icons/emoji/unicode/1f47e.png) no-repeat left 4px;
   background-size: 16px;
 }
 
 ul li.github {
-  background-image: url(https://assets-cdn.github.com/images/icons/emoji/octocat.png);
+  background-image: url(https://github.githubassets.com/images/icons/emoji/octocat.png);
 }
 
 ul li.active {
-  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f680.png);
+  background-image: url(https://github.githubassets.com/images/icons/emoji/unicode/1f680.png);
 }
 
 ul li.home {
-  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/2b50.png);
+  background-image: url(https://github.githubassets.com/images/icons/emoji/unicode/2b50.png);
 }
 
 ul li.docs {
-  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d6.png);
+  background-image: url(https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png);
 }
 
 #stage {
@@ -226,37 +226,37 @@ tbody > tr:nth-child(2n) > td {
 
 .nav__link {
   display: block;
-  background: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f47e.png) no-repeat left 8px;
+  background: url(https://github.githubassets.com/images/icons/emoji/unicode/1f47e.png) no-repeat left 8px;
   background-size: 16px;
   padding: .25em .5em .25em 1.667em;
 }
 
 .nav__link.github {
-  background-image: url(https://assets-cdn.github.com/images/icons/emoji/octocat.png);
+  background-image: url(https://github.githubassets.com/images/icons/emoji/octocat.png);
 }
 
 .nav__link.home {
-  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/2b50.png);
+  background-image: url(https://github.githubassets.com/images/icons/emoji/unicode/2b50.png);
 }
 
 .nav__link.examples {
-  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f527.png);
+  background-image: url(https://github.githubassets.com/images/icons/emoji/unicode/1f527.png);
 }
 
 .nav__link.docs {
-  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d6.png);
+  background-image: url(https://github.githubassets.com/images/icons/emoji/unicode/1f4d6.png);
 }
 
 .nav__link.download {
-  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/2198.png);
+  background-image: url(https://github.githubassets.com/images/icons/emoji/unicode/2198.png);
 }
 
 .nav__link.changelog {
-  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f4cb.png);
+  background-image: url(https://github.githubassets.com/images/icons/emoji/unicode/1f4cb.png);
 }
 
 .nav__link.active {
-  background-image: url(https://assets-cdn.github.com/images/icons/emoji/unicode/1f680.png);
+  background-image: url(https://github.githubassets.com/images/icons/emoji/unicode/1f680.png);
   color: inherit;
 }
 
