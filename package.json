@@ -19,7 +19,7 @@
     "url": "https://github.com/hyperform/hyperform.github.io/issues"
   },
   "dependencies": {
-    "hyperform": "^0.10.0"
+    "hyperform": "^0.10.1"
   },
   "homepage": "https://hyperform.js.org"
 }
