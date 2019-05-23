@@ -30,9 +30,9 @@ defaults:
     values:
         layout: "docs"
 
-hf_version: "0.10.1"
-filesize_plain: "36"
-filesize_gzipped: "9.6"
+hf_version: "0.11.0"
+filesize_plain: "32"
+filesize_gzipped: "9.3"
 
 # Github settings:
 kramdown:

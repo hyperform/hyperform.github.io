@@ -9,7 +9,7 @@ all:
 .PHONY: all
 
 update:
-	npm upgrade hyperform
+	npm upgrade --no-save hyperform
 	sed -i 's/^hf_version:.*/hf_version: "'"$$(cat node_modules/hyperform/src/version.js|sed -n '$$s/[^0-9.]//g p')"'"/' _config.yml
 	sed -i 's/^filesize_plain:.*/filesize_plain: "'"$$(du -k node_modules/hyperform/dist/hyperform.min.js|awk '{print $$1}')"'"/' _config.yml
 	sed -i 's/^filesize_gzipped:.*/filesize_gzipped: "'"$$(gzip -c node_modules/hyperform/dist/hyperform.min.js | wc -c | sed 's/\(...\)$$/.\1/' |LANG=C xargs printf %.1f)"'"/' _config.yml

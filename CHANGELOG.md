@@ -2,6 +2,16 @@
 title: Changelog
 ---
 
+## v0.11.0
+
+* switch build tool to rollup
+* remove deprecated underscore names
+* fix revalidation for forms with novalidate attribute
+
+## v0.10.2
+
+* fix form validation error for detached elements
+
 ## v0.10.1
 
 * fix event properties being set too late
