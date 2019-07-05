@@ -295,69 +295,25 @@ tbody > tr:nth-child(2n) > td {
   max-width: 64px;
 }
 
-.arcade-container {
-  background: #272822;
-  border-radius: .3em;
-  padding: 3em 0;
-  text-align: center;
-}
-
-.arcade-btn.arcade-btn {
-    background: #444;
-    border: none;
-    border-radius: 80px;
-    box-shadow: inset 0 0 2px 2px hsla(0,0%,0%,.2),
-                inset 0 0 2px 4px hsla(0,0%,0%,.2),
-                inset 0 0 2px 6px hsla(0,0%,0%,.2),
-                inset 0 0 1px 8px hsla(0,0%,0%,.5),
-                inset 0 -4px 2px 4px hsla(0,0%,0%,.5),
-                inset 0 1px 1px 8px hsla(0,0%,100%,.25),
-                inset 0 -30px 30px hsla(0,0%,0%,.2),
-                0 -4px 8px 4px hsla(0,0%,0%,.5),
-                0 10px 10px hsla(0,0%,0%,.25),
-                0 0 2px 2px hsla(0,0%,0%,.2),
-                0 0 2px 4px hsla(0,0%,0%,.2),
-                0 0 2px 6px hsla(0,0%,0%,.2),
-                0 0 2px 8px hsla(0,0%,0%,.5),
-                0 1px 2px 8px hsla(0,0%,100%,.25),
-                0 -1px 2px 8px hsla(0,0%,0%,.5);
-    color: #303030;
-    cursor: pointer;
-    display: inline-block;
-    font: bold 30px/85px sans-serif;
-    height: 80px;
-    padding: 0 1em;
-    text-shadow: 0 1px 1px hsla(0,0%,100%,.25),
-                 0 -1px 1px hsla(0,0%,0%,.75);
-    white-space: nowrap;
+.arcade-btn {
+  display: block;
+  line-height: 119px;
 }
 .arcade-btn:hover,
 .arcade-btn:focus {
-    color: #0ab;
-    text-shadow: 0 0 20px hsla(240,75%,75%,.5),
-                 0 1px 1px hsla(0,0%,100%,.25),
-                 0 -1px 1px hsla(0,0%,0%,.75);
+  box-shadow: none;
 }
 .arcade-btn:active {
-    box-shadow: inset 0 0 2px 2px hsla(0,0%,0%,.2),
-                inset 0 0 2px 4px hsla(0,0%,0%,.2),
-                inset 0 0 2px 6px hsla(0,0%,0%,.2),
-                inset 0 0 1px 7px hsla(0,0%,0%,.5),
-                inset 0 5px 15px 7px hsla(0,0%,0%,.15),
-                inset 0 -4px 2px 3px hsla(0,0%,0%,.5),
-                inset 0 1px 1px 7px hsla(0,0%,100%,.25),
-                inset 0 -30px 30px hsla(0,0%,0%,.1),
-                inset 0 30px 30px hsla(0,0%,0%,.2),
-                0 -4px 8px 4px hsla(0,0%,0%,.5),
-                0 5px 10px hsla(0,0%,0%,.25),
-                0 0 2px 2px hsla(0,0%,0%,.2),
-                0 0 2px 4px hsla(0,0%,0%,.2),
-                0 0 2px 6px hsla(0,0%,0%,.2),
-                0 0 2px 8px hsla(0,0%,0%,.5),
-                0 1px 2px 8px hsla(0,0%,100%,.25),
-                0 -1px 2px 8px hsla(0,0%,0%,.5);
-    line-height: 86px;
 }
-a.arcade-btn:after {
-  content: none;
+.arcade-btn:before {
+  content: url(download@120.png);
+  margin-right: 10px;
+  display: inline-block;
+  width: 120px;
+  height: 120px;
+  vertical-align: top;
+}
+.arcade-btn:focus:before,
+.arcade-btn:hover:before {
+  content: url(download-pressed@120.png);
 }

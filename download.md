@@ -8,9 +8,7 @@ id: download
 
 Download the whole project as Zip file:
 
-<p class="arcade-container">
-<a class="arcade-btn" href="https://github.com/hyperform/hyperform/archive/master.zip">Press Button for Download</a>
-</p>
+<a class="arcade-btn" href="https://github.com/hyperform/hyperform/archive/v{{site.hf_version}}.zip">Press Button for Download</a>
 
 In this archive you will find the files `dist/hyperform.min.js` and
 `css/hyperform.css`. Include them in your project, and you’re ready to
