@@ -13,7 +13,7 @@ permalink: none
 # Build settings
 markdown: kramdown
 
-exclude: ["CNAME", "src", "package.json", "Makefile"]
+exclude: ["CNAME", "src", "package.json", "Makefile", "vendor"]
 
 defaults:
   -
