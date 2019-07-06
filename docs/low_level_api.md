@@ -85,20 +85,23 @@ one of the browser) with `element.validationMessage`.
 
 ## Manually checking the validity and reporting to the user
 
-Use `checkValidity`, if you are just interested in whether an element will
-validate or not. Use `reportValidity` to also inform the user about the
+Use `checkValidity`, if you are just interested in whether an element is
+valid or not. Use `reportValidity` to also inform the user about the
 validation result. Both will trigger an event named `invalid`, if the element
 in question is, well, invalid.
 
 To query specific errors (like, if the user entered a value into a required
-field), the `validity` object provides specific properties:
+field), the `validity` object provides corresponding properties:
 
 ```js
-// specific problem with missing value:
-var element_is_empty = element.validity.valueMissing;
+// malformed input, e.g. an e-mail address w/o "@"
+var element_has_malformed_data = element.validity.badInput;
 
-// specific test for missing a pattern requirement:
+// missing a pattern requirement:
 var element_doesnt_match = element.validity.patternMismatch;
+
+// missing required value:
+var element_is_empty = element.validity.valueMissing;
 
 //.. and so on.
 
@@ -181,4 +184,4 @@ page](high_level_api.html).
 ----
 
 :gem: Next: [Extra Hyperform Features](high_level_api.html) – functionality
-added beyond standard HTML 5 validation.
+added beyond standard HTML 5 validation.

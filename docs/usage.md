@@ -59,10 +59,14 @@ The available settings are:
 
     *   `oninput` validate after a field changes
     *   `onblur` validate after a field is left
-    *   `hybrid` an intelligent mixed approach: report valid value on input,
-        but complain about invalid value on blur
     *   `onsubmit` validate when the form should be submitted
     *   `never`: never revalidates on its own
+    *   `hybrid` an intelligent mixed approach: report valid value on input,
+        but complain about invalid value on blur. This is similar to what
+        most browsers do. The person filling out the form gets instant
+        feedback, when they enter a valid value, but won’t be distracted
+        by premature error messages while typing.
+
     Default: `hybrid`.
 *   `validEvent`: (*bool*) Whether the non-standard `valid` event should be
     triggered. Default: `true`.
