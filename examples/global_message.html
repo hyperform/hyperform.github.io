@@ -5,18 +5,18 @@ layout: example
   fields where they belong. However, for the cases where you really
   need this kind of functionality, Hyperform has you covered. -->
 
-<form id="form">
+<form>
   <div id="errors"></div>
   <p>
     <label>
       Field 1 (URL):<br>
-      <input type="url" name="foo" required id="field1">
+      <input type="url" name="foo" required>
     </label>
   </p>
   <p>
     <label>
       Field 2 (date):<br>
-      <input type="date" name="bar" required id="field2">
+      <input type="date" name="bar" required>
     </label>
   </p>
   <p>
@@ -30,7 +30,7 @@ var container = document.getElementById('errors');
 /* change Hyperform's renderer to write into the global error div */
 hyperform.setRenderer('attachWarning', function(warning, element) {
   if (element.labels && element.labels.length) {
-    /* add the label's text, if we have one (only Chrome at the moment) */
+    /* add the label's text, if we have one */
     warning.insertAdjacentText('afterbegin', element.labels[0].textContent);
   }
 

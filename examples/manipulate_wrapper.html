@@ -1,0 +1,42 @@
+---
+layout: example
+description: >
+  <p>Sometimes you need to change the surroundings of an invalid element. You
+  can use the <code>invalid</code> and <code>valid</code> (which is non-standard)
+  events to hook into the appropriate time.</p>
+  <p>Note, that the events will fire at different times. While
+  <code>invalid</code> is triggered only on form submission, <code>valid</code>
+  is triggered immediately when the input becomes valid. You can change this
+  behavior with the <a href="/docs/usage.html"><code>revalidate</code>
+  setting</a>.</p>
+  <hr>
+---
+<form>
+  <p class="wrapper">
+    The background will turn light-red, if the containing input is invalid:<br>
+    <input id="foo" name="foo" required>
+  </p>
+  <p>
+    <button>go</button>
+  </p>
+</form>
+
+<style>
+.wrapper {
+  background: lightgreen;
+}
+.wrapper.my-invalid-class {
+  background: pink;
+}
+</style>
+
+<script>
+var myInput = document.getElementById('foo');
+myInput.addEventListener('invalid', function() {
+  myInput.closest('.wrapper').classList.add('my-invalid-class');
+});
+myInput.addEventListener('valid', function() {
+  myInput.closest('.wrapper').classList.remove('my-invalid-class');
+});
+hyperform(window);
+</script>
