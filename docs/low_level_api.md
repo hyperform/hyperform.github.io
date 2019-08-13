@@ -85,8 +85,8 @@ one of the browser) with `element.validationMessage`.
 
 ## Manually checking the validity and reporting to the user
 
-Use `checkValidity`, if you are just interested in whether an element is
-valid or not. Use `reportValidity` to also inform the user about the
+Use `checkValidity()`, if you are just interested in whether an element is
+valid or not. Use `reportValidity()` to also inform the user about the
 validation result. Both will trigger an event named `invalid`, if the element
 in question is, well, invalid.
 
@@ -113,6 +113,17 @@ var element_is_valid = element.checkValidity();
 // show a warning to the user, if the element is invalid (or remove said
 // warning again if valid):
 element.reportValidity();
+```
+
+### Checking the whole form’s validity
+
+The `form` element, too, has the `checkValidity()` and `reportValidity()`
+methods. When called, they will loop through all form elements of the form
+and check and report, respectively, the validity of each item.
+
+```js
+// check all elements of the first form and report their state
+document.forms[0].reportValidity();
 ```
 
 ## Switching off the validation
