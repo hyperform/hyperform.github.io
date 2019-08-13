@@ -155,6 +155,33 @@ hyperform(window, {
 });
 ```
 
+## Move Around or Manipulate the Error Message
+
+Hyperform’s error messages are, unlike native messages, simple elements and
+can be manipulated with standard DOM methods. You can hook into that mechanism
+by providing your own rendering functions to the global `hyperform` object.
+
+Example: Place the error message after the element’s parent:
+
+```js
+/* @param warning HTMLElement the element containing the error message
+ * @param element HTMLElement the form element, i.e., the <input>, that is
+ *                            invalid
+ */
+hyperform.setRenderer('attachWarning', function(warning, element) {
+  element.parentNode.appendChild(warning);
+});
+```
+
+The renderer methods, that can be overwritten, are:
+
+| method | description |
+| ------ | ----------- |
+| `attachWarning(warning, element)` | add the DOM node `warning` to the document, default is after the input `element` |
+| `detachWarning(warning, element)` | remove the `warning` node from the document |
+| `showWarning(element, whole_form_validated)` | handle the whole warning lifecycle, adding and removing warnings. Usually it is more useful to manipulate the other methods. `whole_form_validated` is true, iff the element’s form is validated (e.g., prior to submits). This is necessary to correctly handle connected radio buttons. |
+| `setMessage(warning, message, element)` | set the `warning` node’s content. Use this method, if you want to support markup in `message`. |
+
 ----
 
 :gem: Next: [Conformance _&_ status](status.html) – what parts of the HTML 5
