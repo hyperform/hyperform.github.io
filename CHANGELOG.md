@@ -2,6 +2,14 @@
 title: Changelog
 ---
 
+## v0.12.0
+
+* fix return values for ValidityState properties on non-input elements
+* add ES module build
+* fix dependency cycle. Rollup runs now w/o warnings
+* add support for calling Hyperform on arbitrary DOM nodes
+* add index.d.ts to npm package
+
 ## v0.11.0
 
 * switch build tool to rollup
