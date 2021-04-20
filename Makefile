@@ -23,13 +23,17 @@ update:
 	$(MAKE) all
 .PHONY: update
 
-icons: src/icon.16.png
+icons: .well-known/icons/icon-16.png
 	@echo "* generate icons"
+	@mkdir -p .well-known/icons
 	@for s in 16 32 57 64 70 72 76 114 120 128 144 150 152 180 192 256 310; do \
 		echo "  - $${s}px"; \
-		rsvg-convert -w $$s -h $$s src/icon.svg > src/icon.$$s.png; \
-		optipng -quiet -o7 src/icon.$$s.png; \
+		rsvg-convert -w $$s -h $$s src/icon.svg > .well-known/icons/icon-$$s.png; \
+		optipng -quiet -o7 .well-known/icons/icon-$$s.png; \
 	done
+	@cp src/icon.svg .well-known/icons/favicon.svg
+	@convert .well-known/icons/icon-32.png .well-known/icons/favicon.ico
+	@cd .well-known/icons && find -L -type f -printf '%P\n' > index.txt
 .PHONY: icons
 
-src/icon.16.png: src/icon.svg
+.well-known/icons/icon-16.png: src/icon.svg
