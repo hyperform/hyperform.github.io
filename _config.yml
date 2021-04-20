@@ -14,6 +14,7 @@ permalink: none
 markdown: kramdown
 
 exclude: ["CNAME", "src", "package.json", "Makefile", "vendor"]
+include: [".well-known"]
 
 defaults:
   -
