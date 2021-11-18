@@ -1,0 +1,4 @@
+Contact: mailto:m.strehl+hyperform@kinetiqa.de
+Expires: 2025-12-30T23:00:00.000Z
+Preferred-Languages: en, de
+Canonical: https://hyperform.js.org/.well-known/security.txt
