@@ -2,6 +2,10 @@
 title: Changelog
 ---
 
+## v0.12.1
+
+* fix error message handling for radio buttons
+
 ## v0.12.0
 
 * fix return values for ValidityState properties on non-input elements
